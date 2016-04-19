@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ page.title }}</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        {% capture tiny %}{% include site.scss %}{% endcapture %}
+        {{ tiny | scssify }}
+    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="/assets/images/icons/favicon.ico" sizes="128x128">
+    <link rel="alternate" type="application/atom+xml" title="konfou.xyz posts" href="/feed.xml">
+    <meta name="author" content="Konstantinos Foutzopoulos">
+  {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+  {% else %}
+    <meta name="description" content="{{ site.description }}">
+  {% endif %}
+    <meta name="keywords" content="{{ site.keywords | join: ',' }}">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:site_name" content="Ben Burwell">
+  {% if page.description %}
+    <meta property="og:description" content="{{ page.description}}">
+  {% else %}
+    <meta property="og:description" content="{{ site.description }}">
+  {% endif %}
+  {% if page.image %}
+    <meta property="og:image" content="{{ page.image }}">
+  {% else %}
+    <meta property="og:image" content="https://konfou.xyz/assets/images/icons/konfou.png">
+  {% endif %}
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http%3A%2F%2Fkonfou.xyz{{ page.url | cgi_escape }}">
+    <meta property="article:author" content="Konstantinos Foutzopoulos">
+    <meta property="fb:admins" content="1439777397">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@konfou">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:creator" content="@konfou">
+  {% if page.description %}
+    <meta property="twitter:description" content="{{ page.description}}">
+  {% else %}
+    <meta property="twitter:description" content="{{ site.description }}">
+  {% endif %}
+  {% if page.image %}
+    <meta name="twitter:image:src" content="{{ page.image }}">
+  {% else %}
+    <meta name="twitter:image:src" content="https://konfou.xyz/assets/images/icons/konfou.png">
+  {% endif %}
+    <meta name="twitter:domain" content="konfou.xyz">
+  {% if page.chrome-webstore-item %}
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/{{ page.chrome-webstore-item }}">
+  {% endif %}
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        jax:["input/TeX","output/HTML-CSS"],
+        tex2jax:{
+          inlineMath: [['$','$'],["\(","\)"]],
+          displayMath:[['$$','$$'], ["\[","\]"]],
+          processEscapes: true,
+          skipTags:['script','noscript','style','textarea','pre','code']
+        }});</script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script> 
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>

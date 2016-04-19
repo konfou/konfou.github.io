@@ -1,0 +1,194 @@
+$dark-gray: #444;
+$medium-gray: #888;
+$light-gray: #ddd;
+$primary-color: #FF6639;
+$link-color: #476AE0;
+
+$base-font-size: 22px;
+$monospace: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
+$container-width: 1200px;
+
+@mixin container {
+	max-width: $container-width;
+	padding: 0 1rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.muted {
+	color: $medium-gray;
+}
+
+body {
+	font-family: $monospace;
+	color: $dark-gray;
+	font-size: $base-font-size;
+	padding: 5rem 0 0 0;
+	margin: 0;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5rem;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.9);
+	z-index: 10;
+	border-bottom: 1px solid $light-gray;
+}
+
+footer {
+	@extend .muted;
+	padding: 2rem;
+	text-align: center;
+}
+
+section {
+	padding-left: 5rem;
+}
+
+h1 {
+	@include container;
+	color: $primary-color;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+h2 {
+	@include container;
+	color: $primary-color;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	padding: 0.5rem;
+}
+
+p {
+	@include container;
+	line-height: 2rem;
+}
+
+ol, ul {
+	@include container;
+}
+
+li {
+	margin-left: 2rem;
+	margin-right: 2rem;
+	padding: 1rem;
+}
+
+pre {
+	font-family: $monospace;
+	overflow: auto;
+	margin: 1rem 0;
+}
+
+kbd {
+	color: $primary-color;
+}
+
+code {
+	color: $medium-gray;
+}
+
+hr {
+	border: none;
+	margin-top: $base-font-size;
+	margin-bottom: $base-font-size;
+	text-align: center;
+	&:after {
+		@extend .muted;
+		content: '##';
+	}
+}
+
+.d3container {
+	text-align: center;
+}
+
+blockquote {
+	font-style: italic;
+	p {
+		box-sizing: border-box;
+		padding: 0 3rem;
+	}
+}
+
+a {
+	color: $dark-gray;
+	text-decoration: underline;
+	&:hover {
+		color: $primary-color;
+	}
+}
+
+time {
+	@extend .muted;
+}
+
+aside {
+	@extend .muted;
+	@include container;
+	&:before {
+		display: block;
+		content: '/*';
+	}
+	&:after {
+		display: block;
+		white-space: pre;
+		content: ' */';
+	}
+	&>* {
+		margin-left: 1rem;
+	}
+	a {
+		color: $medium-gray;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+.flex-justify {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.home {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	pre {
+		margin-top: 2rem;
+		display: inline-block;
+		text-align: left;
+		line-height: 2rem;
+		overflow: auto;
+	}
+}
+
+.highlight {
+	margin: 0;
+	padding: 1rem;
+	background-color: $dark-gray;
+}
+
+.highlight pre {
+	@include container;
+}

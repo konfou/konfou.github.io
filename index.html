@@ -1,23 +1,21 @@
 ---
-layout: default
+layout: master
+title: /home/konfou
 ---
 
 <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+  <pre>(let(
+  (<span class="hl string">name</span> "<span class="hl string">Konstantinos Foutzopoulos</span>")
+  (<span class="hl string">mail</span> "<a href="mailto:mail@konfou.xyz">mail@konfou.xyz</a>")
+  (<span class="hl string">pgp</span> "<a href="https://keybase.io/konfou/key.asc">...</a>")
+  (<span class="hl string">blog</span> "<a href="posts/">posts/</a>")
+  (<span class="hl string">resume</span> "<a href="cv/">cv/</a>")
+  (<span class="hl string">github</span> "<a href="https://github.com/konfou">@konfou</a>")
+  (<span class="hl string">interests</span> (
+    "<span class="hl string">...</span>"
+    "<span class="hl string">...</span>"
+    "<span class="hl string">...</span>"
+    "<span class="hl string">...</span>"
+  )
+))</pre>
 </div>

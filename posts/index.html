@@ -1,0 +1,14 @@
+---
+layout: blog
+title: ~/posts
+description: irregularly updated writings on stuff that interest me
+---
+
+<h1>Posts</h1>
+
+{% for post in site.posts %}
+<p class="flex-justify">
+  <a href="{{ post.url }}">{{ post.title }}</a>
+  <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time>
+</p>
+{% endfor %}
