@@ -7,9 +7,9 @@ excerpt_seperator: <!--more-->
 
 # build config
 markdown: kramdown
-#sass:
-#    style: :compressed
-#    sass_dir: _sass
+sass:
+    style: :compressed
+    sass_dir: _sass
 permalink: /posts/:title/
 gems:
     - jekyll-feed

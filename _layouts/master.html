@@ -8,7 +8,7 @@
         {{ tiny | scssify }}
     </style>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <link rel="shortcut icon" href="/assets/images/icons/favicon.ico" sizes="128x128">
+    <link rel="shortcut icon" href="/assets/images/identicon.png" sizes="128x128">
     <link rel="alternate" type="application/atom+xml" title="konfou.xyz posts" href="/feed.xml">
     <meta name="author" content="Konstantinos Foutzopoulos">
   {% if page.description %}
@@ -16,9 +16,8 @@
   {% else %}
     <meta name="description" content="{{ site.description }}">
   {% endif %}
-    <meta name="keywords" content="{{ site.keywords | join: ',' }}">
     <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:site_name" content="Ben Burwell">
+    <meta property="og:site_name" content="/home/konfou">
   {% if page.description %}
     <meta property="og:description" content="{{ page.description}}">
   {% else %}
@@ -27,12 +26,11 @@
   {% if page.image %}
     <meta property="og:image" content="{{ page.image }}">
   {% else %}
-    <meta property="og:image" content="https://konfou.xyz/assets/images/icons/konfou.png">
+    <meta property="og:image" content="/assets/images/icons/konfou.png">
   {% endif %}
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http%3A%2F%2Fkonfou.xyz{{ page.url | cgi_escape }}">
+    <meta property="og:url" content="https://konfou.xyz{{ page.url | cgi_escape }}">
     <meta property="article:author" content="Konstantinos Foutzopoulos">
-    <meta property="fb:admins" content="1439777397">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@konfou">
     <meta name="twitter:title" content="{{ page.title }}">
@@ -45,12 +43,9 @@
   {% if page.image %}
     <meta name="twitter:image:src" content="{{ page.image }}">
   {% else %}
-    <meta name="twitter:image:src" content="https://konfou.xyz/assets/images/icons/konfou.png">
+    <meta name="twitter:image:src" content="/assets/images/icons/konfou.png">
   {% endif %}
     <meta name="twitter:domain" content="konfou.xyz">
-  {% if page.chrome-webstore-item %}
-    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/{{ page.chrome-webstore-item }}">
-  {% endif %}
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         jax:["input/TeX","output/HTML-CSS"],

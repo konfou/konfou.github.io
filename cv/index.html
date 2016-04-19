@@ -1,0 +1,79 @@
+---
+layout: cv
+title: guest@konfou.xyz ~/cv
+description: my resume/cv made w/ jekyll
+---
+<div class="container">
+    <div id="contact-info" class="vcard"><h1 class="fn">{{ site.data.cv.name }}</h1>
+        <span class="glyphicon glyphicon-home"></span><a href="https://{{ site.data.cv.home }}"> {{ site.data.cv.home }}</a><br/>
+        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:{{ site.data.cv.email }}"> {{ site.data.cv.email }}</a>
+    </div><br />
+    <div id="objective">
+    <p> {{ site.data.cv.summary.text }}</p>
+    <hr/>
+    </div>
+    <h2>Skills Focus and Technical Expertise</h2>
+  {% for skill in site.data.cv.skills %}
+    <h5>{{ skill.name }}</h5>
+   {% for item in skill.items %}
+    <span class="label label-default skills"> {{ item.name }} </span>
+   {% endfor %}
+  {% endfor %}
+    <hr/>
+  <!--
+    <h2>Professional Experience</h2>
+  {% for item in site.data.cv.professional %}
+    <div class="row">
+        <div class="col-xs-6 nohref"><h3><a href="{{ item.link }}"><strong>{{ item.name }}</strong></a>
+        </h3>
+        </div>
+        <div class="col-xs-6 text-right">
+            <h5><em>{{ item.start | date: "%b %Y" }} to {{ item.end | date: "%b %Y" }}</em></h5>
+            <h5>{{ item.location }}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h4><em>{{ item.title }}</em></h4>
+            <p>{{ item.summary }}</p>
+            <br/>
+            <h4>Notable Projects:</h4>
+          {% for project in item.projects %}
+           {% if project.link %}
+            <h5><a href="{{ project.link }}"><strong>{{ project.name }}</strong></a></h5>
+           {% else %}
+            <h5><strong>{{ project.name }}</strong></h5>
+           {% endif %}
+            <p>{{ project.description }}</p>
+            <p> Applicable Skills:</p>
+            <p>
+               {% for skill in project.skills %}
+                <span class="label label-default skills"> {{ skill }} </span>
+               {% endfor %}
+            </p>
+            <br/>
+          {% endfor %}
+        </div>
+    </div>
+    <br/>
+  {% endfor %}
+    <hr/>
+  -->
+    <h2>Education</h2>
+  {% for college in site.data.cv.education.colleges %}
+    <h3><a href="{{ college.link }}"><strong>{{ college.name }}</strong></a></h3>
+    <h4><strong>{{ college.degree }}</strong>, <abbr class="dtstart">{{ college.start }}</abbr>-<abbr class="dtend">{{ 
+    college.end 
+    }}</abbr></h4>
+  {% endfor %}
+    <hr/>
+  <!--
+    <h2>Certifications and Awards</h2>
+  {% for item in site.data.cv.certsAndAwards %}
+    <h4>{{ item.name }}, {{ item.year }}</h4>
+  {% endfor %}
+    <hr/>
+    <h2>Clearances</h2>
+    <h4>{{ site.data.cv.clearance.name }}</h4>
+  -->
+</div>

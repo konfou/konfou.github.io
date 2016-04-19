@@ -1,0 +1,34 @@
+name: Konstantinos Foutzopoulos
+home: konfou.xyz
+email: mail@konfou.xyz
+summary:
+ text: Jack of all trades, master of none, Oftentimes better than master of one.
+
+skills:
+ - name: Languages
+   items:
+    - name: Python
+    - name: C
+    - name: Mathematica
+    - name: Perl
+ - name: Standards
+   items:
+    - name: XHTML
+    - name: CSS
+ - name: Mobile
+   items:
+    - name: Android
+    - name: Maemo
+ - name: CM
+   items:
+    - name: Git
+    - name: Bazaar
+    - name: Subversion
+
+education:
+ colleges:
+  - name: Aristotle University of Thessaloniki
+    link: https://www.auth.gr/
+    start: 2014 
+    end: 2018
+    degree: BSc, Physics
