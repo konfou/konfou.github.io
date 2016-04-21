@@ -5,14 +5,15 @@ description: my resume/cv made w/ jekyll
 ---
 <div class="container">
     <div id="contact-info" class="vcard"><h1 class="fn">{{ site.data.cv.name }}</h1>
-        <span class="glyphicon glyphicon-home"></span><a href="https://{{ site.data.cv.home }}"> {{ site.data.cv.home }}</a><br/>
-        <span class="glyphicon glyphicon-envelope"></span><a href="mailto:{{ site.data.cv.email }}"> {{ site.data.cv.email }}</a>
+        <span class="glyphicon glyphicon-home"></span><a class="url" href="//{{ site.data.cv.home }}"> {{ site.data.cv.home }}</a> |
+        <span class="glyphicon glyphicon-envelope"></span><a class="email" href="mailto:{{ site.data.cv.email }}"> {{ site.data.cv.email }}</a>
+        <!-- | <span class="org">{{ site.data.cv.org }}</span>, <span class="locality">{{ site.data.cv.city }}</span> -->
     </div><br />
     <div id="objective">
     <p> {{ site.data.cv.summary.text }}</p>
     <hr/>
     </div>
-    <h2>Skills Focus and Technical Expertise</h2>
+    <h2>Skills and Expertise</h2>
   {% for skill in site.data.cv.skills %}
     <h5>{{ skill.name }}</h5>
    {% for item in skill.items %}

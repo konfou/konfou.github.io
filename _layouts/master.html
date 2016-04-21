@@ -1,63 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>{{ page.title }}</title>
-    <meta charset="UTF-8">
-    <style type="text/css">
-        {% capture tiny %}{% include site.scss %}{% endcapture %}
-        {{ tiny | scssify }}
-    </style>
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <link rel="shortcut icon" href="/assets/images/identicon.png" sizes="128x128">
-    <link rel="alternate" type="application/atom+xml" title="konfou.xyz posts" href="/feed.xml">
-    <meta name="author" content="Konstantinos Foutzopoulos">
-  {% if page.description %}
-    <meta name="description" content="{{ page.description }}">
-  {% else %}
-    <meta name="description" content="{{ site.description }}">
-  {% endif %}
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:site_name" content="/home/konfou">
-  {% if page.description %}
-    <meta property="og:description" content="{{ page.description}}">
-  {% else %}
-    <meta property="og:description" content="{{ site.description }}">
-  {% endif %}
-  {% if page.image %}
-    <meta property="og:image" content="{{ page.image }}">
-  {% else %}
-    <meta property="og:image" content="/assets/images/icons/konfou.png">
-  {% endif %}
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://konfou.xyz{{ page.url | cgi_escape }}">
-    <meta property="article:author" content="Konstantinos Foutzopoulos">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@konfou">
-    <meta name="twitter:title" content="{{ page.title }}">
-    <meta name="twitter:creator" content="@konfou">
-  {% if page.description %}
-    <meta property="twitter:description" content="{{ page.description}}">
-  {% else %}
-    <meta property="twitter:description" content="{{ site.description }}">
-  {% endif %}
-  {% if page.image %}
-    <meta name="twitter:image:src" content="{{ page.image }}">
-  {% else %}
-    <meta name="twitter:image:src" content="/assets/images/icons/konfou.png">
-  {% endif %}
-    <meta name="twitter:domain" content="konfou.xyz">
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        jax:["input/TeX","output/HTML-CSS"],
-        tex2jax:{
-          inlineMath: [['$','$'],["\(","\)"]],
-          displayMath:[['$$','$$'], ["\[","\]"]],
-          processEscapes: true,
-          skipTags:['script','noscript','style','textarea','pre','code']
-        }});</script>
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script> 
-  </head>
-  <body>
-    {{ content }}
-  </body>
+<head>
+  <title>{{ page.title }}</title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+      {% capture tiny %}{% include site.scss %}{% endcapture %}
+      {{ tiny | scssify }}
+  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="//sigil.cupcake.io/konfou.xyz.png" sizes="240x240">
+  <link rel="alternate" type="application/atom+xml" title="konfou.xyz posts" href="feed.xml">
+  <meta name="author" content="Konstantinos Foutzopoulos">
+{% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+{% else %}
+  <meta name="description" content="{{ site.description }}">
+{% endif %}
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:site_name" content="/home/konfou">
+{% if page.description %}
+  <meta property="og:description" content="{{ page.description}}">
+{% else %}
+   <meta property="og:description" content="{{ site.description }}">
+{% endif %}
+{% if page.image %}
+  <meta property="og:image" content="{{ page.image }}">
+{% else %}
+  <meta property="og:image" content="//github.com/identicons/konfou.png">
+{% endif %}
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="//konfou.xyz{{ page.url | cgi_escape }}">
+  <meta property="article:author" content="Konstantinos Foutzopoulos">
+  <script type="text/x-mathjax-config">
+    {% capture tiny %}{% include MathJax.config.js %}{% endcapture %}
+  </script>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script> 
+</head>
+<body>
+  {{ content }}
+</body>
 </html>
