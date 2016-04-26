@@ -4,15 +4,16 @@ url: konfou.xyz
 email: mail@konfou.xyz
 description: a physicts venture into CS
 excerpt_seperator: <!--more-->
-include: ["_pages"]
 
 # build config
+include: ["_pages"]
 markdown: kramdown
 sass:
-    style: :compressed
+    style: compressed
     sass_dir: _sass
 permalink: /posts/:title/
 gems:
     - jekyll-feed
     - jekyll-sitemap
 timezone: Greece/Thessaloniki
+auto: true

@@ -20,16 +20,14 @@ layout: cv
   </div>
   <h2>Skills and Expertise</h2>
   {% for skill in site.data.cv.skills %}
-    <h5>{{ skill.name }}</h5>
-   {% for item in skill.items %}
-    <span class="label label-default skills"> {{ item.name }} </span>
-   {% endfor %}
-  {% endfor %}
+  <h5>{{ skill.name }}</h5>
+  {% for item in skill.items %}<span class="label label-default skills">{{ item.name }}</span>
+  {% endfor %}{% endfor %}
   <hr/>
   <h2>Education</h2>
-  {% for college in site.data.cv.education.colleges %}
-    <h3>
-      <a href="{{ college.link }}"><strong>{{ college.name }}</strong></a>
+  {% for college in site.data.cv.education.colleges %}  <h3>
+      <a href="{{ college.link }}">
+      <strong>{{ college.name }}</strong></a>
     </h3>
     <h4>
       <strong>{{ college.degree }}</strong>, 
