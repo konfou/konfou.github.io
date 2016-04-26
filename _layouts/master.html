@@ -2,39 +2,31 @@
 <html lang="en">
 <head>
   <title>{{ page.title }}</title>
+  <!-- based on benburwell.github.io -->
   <meta charset="UTF-8">
-  <style type="text/css">
-      {% capture tiny %}{% include site.scss %}{% endcapture %}
-      {{ tiny | scssify }}
-  </style>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="icon" href="//sigil.cupcake.io/konfou.xyz.png" />
-  <link rel="alternate" type="application/atom+xml" title="konfou.xyz posts" href="feed.xml" />
   <meta name="author" content="Konstantinos Foutzopoulos">
-{% if page.description %}
-  <meta name="description" content="{{ page.description }}">
-{% else %}
-  <meta name="description" content="{{ site.description }}">
-{% endif %}
+{% if page.description %}  <meta name="description" content="{{ page.description }}">
+{% else %}  <meta name="description" content="{{ site.description }}">{% endif %}
   <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:site_name" content="/home/konfou">
-{% if page.description %}
-  <meta property="og:description" content="{{ page.description}}">
-{% else %}
-   <meta property="og:description" content="{{ site.description }}">
-{% endif %}
-{% if page.image %}
-  <meta property="og:image" content="{{ page.image }}">
-{% else %}
-  <meta property="og:image" content="//github.com/identicons/konfou.png">
-{% endif %}
+  <meta property="og:site_name" content="{{ site.title }}">
+{% if page.description %}  <meta property="og:description" content="{{ page.description}}">
+{% else %}  <meta property="og:description" content="{{ site.description }}">{% endif %}
+{% if page.image %}  <meta property="og:image" content="{{ page.image }}">
+{% else %}  <meta property="og:image" content="//github.com/identicons/konfou.png">{% endif %}
   <meta property="og:type" content="article">
   <meta property="og:url" content="//konfou.xyz{{ page.url | cgi_escape }}">
   <meta property="article:author" content="Konstantinos Foutzopoulos">
+  <link rel="icon" href="//sigil.cupcake.io/{{ site.url }}.png" />
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} posts" href="feed.xml" />
+  <style type="text/css">
+    {% capture tiny %}{% include site.scss %}{% endcapture %}
+    {{ tiny | scssify }}
+  </style>
   <script type="text/x-mathjax-config">
-    {% capture tiny %}{% include MathJax.config.js %}{% endcapture %}
+    {% include mathjax.conf.js %}
   </script>
-  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script> 
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script> 
 </head>
 <body>
   {{ content }}

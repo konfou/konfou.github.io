@@ -1,9 +1,10 @@
 # site config
 title: konfou.xyz
+url: konfou.xyz
 email: mail@konfou.xyz
 description: a physicts venture into CS
-url: "https://konfou.xyz"
 excerpt_seperator: <!--more-->
+include: ["_pages"]
 
 # build config
 markdown: kramdown
