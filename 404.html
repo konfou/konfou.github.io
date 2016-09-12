@@ -1,15 +1,17 @@
 ---
 title: Well, this is embarrassing.
-description: Page not found — that’s a 404 :(
+description: 404 — Not Found
 layout: blog
+permalink: /404.html
 ---
 
-<h1>HTTP 404 - Not Found</h1>
+<h1>HTTP 404 — Not Found :(</h1>
 
-<p>Perhaps you'd be interested in one of the following?</p>
+<p>Perhaps you'd be interested in one of the following? >^_^<</p>
 
-<ul>
-  {% for post in site.posts limit:5 %}
-  <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+{% for post in site.posts limit:5 %}
+    <p class="flex-justify h-entry hentry">
+      <a href="{{ post.url }}" class="p-name entry-title u-url">{{ post.title }}</a>
+      <time class="dt-published published" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+    </p>
+{% endfor %}

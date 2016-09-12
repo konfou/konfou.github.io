@@ -4,41 +4,80 @@ $light-gray: #ddd;
 $primary-color: #FF6639;
 $link-color: #476AE0;
 
-$base-font-size: 22px;
-$monospace: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
-$container-width: 1200px;
+$monospace: "Liberation Mono", Consolas,Menlo, Courier, monospace !default;
 
 @mixin container {
-  max-width: $container-width;
+  max-width: 720px;
   padding: 0 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.muted {
-  color: $medium-gray;
-}
+/* root */
 
 body {
   font-family: $monospace;
   color: $dark-gray;
-  font-size: $base-font-size;
   padding: 5rem 0 0 0;
   margin: 0;
 }
 
-header {
-  position: fixed;
+pre {
+  font-family: $monospace;
+  overflow: auto;
+  margin: 1rem 0;
+}
+
+.home {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 5rem;
+  height: 100%;
+  text-align: center;
+  pre {
+    margin-top: 2rem;
+    display: inline-block;
+    text-align: left;
+    line-height: 1.5rem;
+    overflow: auto;
+  }
+}
+
+a {
+  color: $dark-gray;
+  text-decoration: underline;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+/* blog */
+
+header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2rem;
   padding: 0;
   margin: 0;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 10;
-  border-bottom: 1px solid $light-gray;
+  background-color: $light-gray;
+
+  border-bottom: 1px solid $medium-gray;
+}
+
+h1 {
+  @include container;
+  color: $primary-color;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.muted {
+  color: $medium-gray;
 }
 
 footer {
@@ -47,16 +86,30 @@ footer {
   text-align: center;
 }
 
-section {
-  padding-left: 5rem;
+time {
+  @extend .muted;
 }
 
-h1 {
+/* posts */
+
+p {
   @include container;
-  color: $primary-color;
-  font-size: 2rem;
-  font-weight: bold;
+  line-height: 1rem;
 }
+
+.flex-justify {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* post */
+
+.e-content {
+    text-align: justify;
+}
+
+/* other */
 
 h2 {
   @include container;
@@ -65,17 +118,16 @@ h2 {
   font-weight: bold;
 }
 
+section {
+  padding-left: 5rem;
+}
+
 table {
   width: 100%;
 }
 
 td {
   padding: 0.5rem;
-}
-
-p {
-  @include container;
-  line-height: 2rem;
 }
 
 ol, ul {
@@ -88,12 +140,6 @@ li {
   padding: 1rem;
 }
 
-pre {
-  font-family: $monospace;
-  overflow: auto;
-  margin: 1rem 0;
-}
-
 kbd {
   color: $primary-color;
 }
@@ -104,17 +150,11 @@ code {
 
 hr {
   border: none;
-  margin-top: $base-font-size;
-  margin-bottom: $base-font-size;
   text-align: center;
   &:after {
     @extend .muted;
     content: '##';
   }
-}
-
-.d3container {
-  text-align: center;
 }
 
 blockquote {
@@ -123,18 +163,6 @@ blockquote {
     box-sizing: border-box;
     padding: 0 3rem;
   }
-}
-
-a {
-  color: $dark-gray;
-  text-decoration: underline;
-  &:hover {
-    color: $primary-color;
-  }
-}
-
-time {
-  @extend .muted;
 }
 
 aside {
@@ -157,30 +185,12 @@ aside {
   }
 }
 
+.d3container {
+  text-align: center;
+}
+
 .text-center {
   text-align: center;
-}
-
-.flex-justify {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.home {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  pre {
-    margin-top: 2rem;
-    display: inline-block;
-    text-align: left;
-    line-height: 2rem;
-    overflow: auto;
-  }
 }
 
 .highlight {

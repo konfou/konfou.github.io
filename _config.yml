@@ -1,9 +1,12 @@
 # site config
 title: konfou.xyz
 url: konfou.xyz
-email: mail@konfou.xyz
-description: a physicts venture into CS
+description: a physicists venture into the internet
 excerpt_seperator: <!--more-->
+
+# author info
+author: Konstantinos Foutzopoulos
+email: mail@konfou.xyz
 
 # build config
 include: ["_pages"]
@@ -16,4 +19,3 @@ gems:
     - jekyll-feed
     - jekyll-sitemap
 timezone: Greece/Thessaloniki
-auto: true

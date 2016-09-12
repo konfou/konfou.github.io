@@ -1,12 +1,11 @@
 ---
 layout: blog
 ---
-
-<article itemscope itemtype="//schema.org/BlogPosting">
-  <h1 itemprop="headline">{{ page.title }}</h1>
-  <p><time datetime="{{ post.date | date: '%Y-%m-%d' }}" 
-      itemprop="datePublished">{{ page.date | date: "%-d %B %Y" }}</time></p>
-  <div itemprop="articleBody">
+<article itemscope itemtype="//schema.org/BlogPosting" class="h-entry hentry">
+  <h1 itemprop="headline" class="p-name entry-title">{{ page.title }}</h1>
+  <p><time datetime="{{ post.date | date: '%Y-%m-%d' }}"
+           itemprop="datePublished" class="dt-published published">{{ page.date | date: "%-d %B %Y" }}</time></p>
+  <div itemprop="articleBody" class="e-content">
     {{ content }}
   </div>
 </article>
@@ -14,7 +13,7 @@ layout: blog
 <footer>
   <p>
     Read more:<br>
-    {% for related in site.related_posts | limit: 3 %}
+    {% for related in site.related_posts limit: 3 %}
     <a href="{{ related.url }}">{{ related.title }}</a><br>
     {% endfor %}
   </p>

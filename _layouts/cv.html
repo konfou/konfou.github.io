@@ -1,15 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+  <!-- based on spitimage/jekyll-cv-generator -->
   <title>{{ page.title }}</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="author" content="{{ site.data.cv.name }}" />
   <meta name="description" content="{{ site.data.cv.name}}'s CV" />
-  <link rel="icon" href="//github.com/identicons/{{ site.data.vars.nick }}.png" />
+  <link rel="icon" href="/assets/img/github_{{ site.data.vars.nick }}.png" />
   <link rel="stylesheet" media="all" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
   <link rel="stylesheet" type="type/css" href="//fonts.googleapis.com/css?family=Lusitana:400,700" />
+  <link rel="profile" href="http://microformats.org/profile/specs" />
   <style  type="text/css">
      h1 { font-family: 'Lusitana', serif; font-size: 5em; }
      .skills { margin-right: 1em; }
@@ -19,4 +21,7 @@
 <body>
 {{ content }}
 </body>
+<!--
+{% include waifu_cc %}
+-->
 </html>

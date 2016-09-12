@@ -2,17 +2,20 @@
 layout: master
 ---
 <script type="text/x-mathjax-config" src="/assets/js/mathjax.conf.js"></script>
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script> 
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 <header>
   <h1><a href="../">../</a></h1>
 </header>
 <main>
-  {{ content }}
+{{ content }}
 </main>
 <footer>
   <p>
-    <a href="/">about</a>
-    <a href="/posts/">posts</a>
-    <a href="https://github.com/konfou">@konfou</a>
+    <a href="/">root</a> ~
+    <a href="/posts/">posts</a> ~
+    <a href="/feed.xml">rss</a>
+  </p>
+  <p>
+    &copy; {{ site.time | date: '%Y' }} <a href="//creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
   </p>
 </footer>

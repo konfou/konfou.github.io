@@ -2,6 +2,7 @@ name: Konstantinos Foutzopoulos
 url: konfou.xyz
 email: mail@konfou.xyz
 city: Thessaloniki
+country: Greece
 org: Aristotle University
 summary:
  text: Jack of all trades, master of none, Oftentimes better than master of one.
@@ -33,8 +34,9 @@ skills:
 
 education:
  colleges:
-  - name: Aristotle University of Thessaloniki
-    link: https://users.auth.gr/kfoutzop
-    start: 2014 
+  - name: Aristotle University
+    city: Thessaloniki
+    url: users.auth.gr/kfoutzop
+    start: 2014
     end: 2018
     degree: BSc, Physics
