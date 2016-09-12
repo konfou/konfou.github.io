@@ -1,10 +1,12 @@
-$dark-gray: #444;
-$medium-gray: #888;
-$light-gray: #ddd;
-$primary-color: #FF6639;
-$link-color: #476AE0;
+$light_bg: #3f3f3f;
+$fg: #dcdccc;
+$head: #9fafaf;
+$link: #f0dfaf;
+$link_hov: #ecbcbc;
+$med-gray: #8f8f8f;
 
-$monospace: "Liberation Mono", Consolas,Menlo, Courier, monospace !default;
+$mono: "Liberation Mono", "DejaVu Sans Mono", monospace !default;
+$sans: "Noto Sans Regular", "Liberation Sans", "DejaVu Sans Book", sans !default;
 
 @mixin container {
   max-width: 720px;
@@ -13,17 +15,16 @@ $monospace: "Liberation Mono", Consolas,Menlo, Courier, monospace !default;
   margin-right: auto;
 }
 
-/* root */
-
 body {
-  font-family: $monospace;
-  color: $dark-gray;
+  background-color: $light_bg;
+  color: $fg;
+  font-family: $mono;
   padding: 5rem 0 0 0;
   margin: 0;
 }
 
 pre {
-  font-family: $monospace;
+  font-family: $mono;
   overflow: auto;
   margin: 1rem 0;
 }
@@ -45,39 +46,31 @@ pre {
 }
 
 a {
-  color: $dark-gray;
-  text-decoration: underline;
+  color: $link;
+  text-decoration: none;
   &:hover {
-    color: $primary-color;
+    color: $link_hov;
   }
 }
 
-/* blog */
-
 header {
   position: absolute;
-  z-index: 10;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 2rem;
-  padding: 0;
-  margin: 0;
   text-align: center;
-  background-color: $light-gray;
-
-  border-bottom: 1px solid $medium-gray;
+  background-color: $light_bg;
+  border-bottom: 1px solid $med-gray;
 }
 
 h1 {
   @include container;
-  color: $primary-color;
+  color: $head;
   font-size: 1rem;
   font-weight: bold;
 }
 
 .muted {
-  color: $medium-gray;
+  color: $med-gray;
 }
 
 footer {
@@ -90,8 +83,6 @@ time {
   @extend .muted;
 }
 
-/* posts */
-
 p {
   @include container;
   line-height: 1rem;
@@ -103,17 +94,13 @@ p {
   justify-content: space-between;
 }
 
-/* post */
-
 .e-content {
-    text-align: justify;
+  text-align: justify;
 }
-
-/* other */
 
 h2 {
   @include container;
-  color: $primary-color;
+  color: $head;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -141,11 +128,11 @@ li {
 }
 
 kbd {
-  color: $primary-color;
+  color: $link;
 }
 
 code {
-  color: $medium-gray;
+  color: $med-gray;
 }
 
 hr {
@@ -181,7 +168,7 @@ aside {
     margin-left: 1rem;
   }
   a {
-    color: $medium-gray;
+    color: $med-gray;
   }
 }
 
@@ -196,7 +183,7 @@ aside {
 .highlight {
   margin: 0;
   padding: 1rem;
-  background-color: $dark-gray;
+  background-color: $fg;
 }
 
 .highlight pre {
