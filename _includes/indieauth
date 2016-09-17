@@ -1,4 +1,0 @@
-  <!-- using my domain as openid -->
-  <link rel="openid.delegate" href="https://konfou.xyz/" />
-  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
-  <link rel="pgpkey" type="application/pgp-keys" href="/pgpkey.asc" />

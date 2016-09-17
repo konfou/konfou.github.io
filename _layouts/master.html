@@ -4,19 +4,21 @@
   <title>{{ page.title }}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="author" content="{{ site.owner }}">
+  <meta name="author" content="{{ site.author }}">
 {% if page.description %}  <meta name="description" content="{{ page.description }}">{% else %}  <meta name="description" content="{{ site.description }}">{% endif %}
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:site_name" content="{{ site.title }}">
 {% if page.description %}  <meta property="og:description" content="{{ page.description}}">{% else %}  <meta property="og:description" content="{{ site.description }}">{% endif %}
-{% if page.image %}  <meta property="og:image" content="{{ page.image }}">{% else %}  <meta property="og:image" content="//github.com/identicons/konfou.png">{% endif %}
+{% if page.image %}  <meta property="og:image" content="{{ page.image }}">{% else %}  <meta property="og:image" content="{{ site.url }}/assets/img/sigil_{{ site.url }}.png">{% endif %}
   <meta property="og:type" content="article">
-  <meta property="og:url" content="//{{ site.url }}{{ page.url | cgi_escape }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="article:author" content="{{ site.owner }}">
   <link rel="icon" href="/assets/img/sigil_{{ site.url }}.png" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} posts" href="/feed.xml" />
   <link rel="stylesheet" type="text/css" href="/assets/css/site.css" />
-{% include indieauth %}
+  <link rel="openid.delegate" href="https://{{ site.url }}" />
+  <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+  <link rel="pgpkey" type="application/pgp-keys" href="/pgpkey.asc" />
 </head>
 <body>
 {{ content }}
