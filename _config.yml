@@ -1,8 +1,8 @@
 # site config
 title: konfou.xyz
-url: konfou.xyz
 description: a physicists venture into the internet
-excerpt_seperator: <!--more-->
+url: konfou.xyz
+logo: /assets/img/sigil_konfou.xyz.png
 
 # author info
 author: Konstantinos Foutzopoulos

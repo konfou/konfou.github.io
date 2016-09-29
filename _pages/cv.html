@@ -8,9 +8,9 @@ layout: cv
   <div id="contact-info" class="p-contact contact h-card vcard">
     <h1 class="p-name fn">{{ site.data.cv.name }}</h1>
     <span class="glyphicon glyphicon-home"></span>
-    <a class="u-url url" href="//{{ site.data.cv.url }}"> {{ site.data.cv.url }}</a> |
+    <a class="u-url url" href="//{{ site.data.cv.url }}">{{ site.data.cv.url }}</a> |
     <span class="glyphicon glyphicon-envelope"></span>
-    <a class="u-email email" href="mailto:{{ site.data.cv.email }}"> {{ site.data.cv.email }}</a> |
+    <a class="u-email email" href="mailto:{{ site.data.cv.email }}">{{ site.data.cv.email }}</a> |
     <span class="glyphicon glyphicon-education"></span>
     <span class="p-org org"> {{ site.data.cv.org }}</span>,
     <span class="p-locality locality">{{ site.data.cv.city }}</span>,
@@ -30,7 +30,7 @@ layout: cv
   <hr/>
 
   <h2 class="p-education education">Education</h2>
-  {% for college in site.data.cv.education.colleges %}  <span class="h-event vevent">
+  {% for college in site.data.cv.education.colleges %}  <div class="h-event vevent">
     <h3>
       <strong>
         <a class="u-url url" href="//{{ college.url }}">
@@ -42,7 +42,7 @@ layout: cv
       <strong class="p-summary">{{ college.degree }}</strong>,
       <abbr class="dt-start dtstart">{{ college.start }}</abbr>-<abbr class="dt-end dtend">{{college.end}}</abbr>
     </h4>
-    </span>
+    </div>
   {% endfor %}
   <hr/>
 
