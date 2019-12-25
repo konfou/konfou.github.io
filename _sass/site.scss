@@ -13,8 +13,8 @@ $link: $double_col_white;
 $link_hov: $beauty_bush;
 $med_gray: $gray;
 
-$mono: "Liberation Mono", "DejaVu Sans Mono", monospace !default;
-$sans: "Noto Sans Regular", "Liberation Sans", "DejaVu Sans Book", sans !default;
+$mono: "DejaVu Sans Mono", "Liberation Mono", monospace !default;
+$sans: "DejaVu Sans Book", "Liberation Sans", sans !default;
 $maxcols: 80ch;
 
 @mixin container {
@@ -51,7 +51,6 @@ pre {
     display: inline-block;
     text-align: left;
     line-height: 1.5rem;
-
   }
 }
 
@@ -59,10 +58,6 @@ pre {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.e-content {
-  /* text-align: justify; */
 }
 
 a {
@@ -111,6 +106,21 @@ footer {
   text-align: center;
 }
 
+ol, ul {
+  @include container;
+}
+
+li {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 1rem;
+}
+
+code {
+  @include container;
+  color: $med_gray;
+}
+
 time {
   @extend .muted;
 }
@@ -127,22 +137,8 @@ td {
   padding: 0.5rem;
 }
 
-ol, ul {
-  @include container;
-}
-
-li {
-  margin-left: 2rem;
-  margin-right: 2rem;
-  padding: 1rem;
-}
-
 kbd {
   color: $link;
-}
-
-code {
-  color: $med_gray;
 }
 
 .text-center {
@@ -150,7 +146,7 @@ code {
 }
 
 .d3container {
-    @extend .text-center;
+  @extend .text-center;
 }
 
 .highlight {
