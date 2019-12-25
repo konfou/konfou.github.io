@@ -14,8 +14,6 @@ skills:
     - name: Python
     - name: R
     - name: Julia
-    - name: Common Lisp (basic)
-    - name: Racket (basic)
  - name: Software
    items:
     - name: Mathematica
@@ -29,7 +27,7 @@ skills:
     - name: gnuplot
     - name: ngspice
     - name: awk
-    - name: (Xe)LaTeX
+    - name: XeLaTeX
     - name: Git
     - name: Mercurial
     - name: QEMU
@@ -37,17 +35,19 @@ skills:
  - name: Systems
    items:
     - name: GNU/Linux
-    - name: BSD
-    - name: Plan 9
     - name: Windows
-    - name: QNX (to-learn)
-    - name: z/OS (to-learn)
 
 education:
  colleges:
   - name: Aristotle University
     city: Thessaloniki
     url: users.auth.gr/kfoutzop
+    start: 2019
+    end: present
+    degree: MSc, Computational Physics
+  - name: Aristotle University
+    city: Thessaloniki
+    url: users.auth.gr/kfoutzop
     start: 2014
-    end: Present
+    end: 2019
     degree: BSc, Physics

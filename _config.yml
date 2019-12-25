@@ -11,6 +11,11 @@ email: mail@konfou.xyz
 # build config
 include: ["_pages"]
 markdown: kramdown
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
 sass:
     style: compressed
     sass_dir: _sass
