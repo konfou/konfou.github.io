@@ -158,7 +158,7 @@ is the place where most of set up takes place making a display manager
 even less necessary.
 
 Also the user's dbus daemon has to be set. This is done adding the
-following to ~/.xsession, taken from [nixos.wiki][].
+following to ~/.xinitrc, taken from [nixos.wiki][].
 ```
 if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
   eval $(dbus-launch --exit-with-session --sh-syntax)
