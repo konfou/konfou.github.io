@@ -12,15 +12,14 @@ email: mail@konfou.xyz
 include: ["_pages"]
 markdown: kramdown
 kramdown:
- input: GFM
- auto_ids: true
- hard_wrap: false
- syntax_highlighter: rouge
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
 sass:
-    style: compressed
-    sass_dir: _sass
+  style: compressed
+  sass_dir: _sass
 permalink: /posts/:title/
 gems:
-    - jekyll-feed
-    - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-sitemap
 timezone: Greece/Thessaloniki
