@@ -19,7 +19,7 @@ sass:
   style: compressed
   sass_dir: _sass
 permalink: /posts/:title/
-gems:
+plugins:
   - jekyll-feed
   - jekyll-sitemap
 timezone: Greece/Thessaloniki
