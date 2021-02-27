@@ -1,35 +1,46 @@
 name: Konstantinos Foutzopoulos
 url: konfou.xyz
 email: mail@konfou.xyz
+gh: konfou
+li: kfoutzopoulos
 org: Aristotle University
 city: Thessaloniki
 country: Greece
 summary:
- text: Jack of all trades, master of none, Oftentimes better than master of one.
+ text:
+   Currently, master student in computational physics.
+
+interests:
+ - nonlinear dynamics
+ - complex systems
+ - celestial mechanics
+ - relativity
+ - applied mathematics
+ - data analysis
 
 skills:
  - name: Programming
    items:
-    - name: C/C++ (novice)
+    - name: C
+    - name: C++
     - name: Python
     - name: R
     - name: Julia
+    - name: JS (basic)
  - name: Software
    items:
     - name: Mathematica
     - name: Maxima
     - name: MATLAB
     - name: GNU Octave
+    - name: Excel
     - name: Origin (basic)
-    - name: QtiPlot (basic)
  - name: Tools
    items:
     - name: gnuplot
     - name: ngspice
-    - name: awk
-    - name: XeLaTeX
+    - name: LaTeX
     - name: Git
-    - name: Mercurial
     - name: QEMU
     - name: Docker
  - name: Systems
@@ -44,10 +55,10 @@ education:
     url: users.auth.gr/kfoutzop
     start: 2019
     end: present
-    degree: MSc, Computational Physics
+    degree: MS, Computational Physics
   - name: Aristotle University
     city: Thessaloniki
     url: users.auth.gr/kfoutzop
     start: 2014
     end: 2019
-    degree: BSc, Physics
+    degree: BS, Physics

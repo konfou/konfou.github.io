@@ -7,14 +7,13 @@ layout: cv
 <div class="container h-resume hresume">
   <div id="contact-info" class="p-contact contact h-card vcard">
     <h1 class="p-name fn">{{ site.data.cv.name }}</h1>
-    <span class="glyphicon glyphicon-home"></span>
-    <a class="u-url url" href="//{{ site.data.cv.url }}">{{ site.data.cv.url }}</a> |
-    <span class="glyphicon glyphicon-envelope"></span>
-    <a class="u-email email" href="mailto:{{ site.data.cv.email }}">{{ site.data.cv.email }}</a> |
-    <span class="glyphicon glyphicon-education"></span>
-    <span class="p-org org"> {{ site.data.cv.org }}</span>,
+    <strong>Web:</strong> <a class="u-url url" href="//{{ site.data.cv.url }}">{{ site.data.cv.url }}</a> |
+    <strong>Email:</strong> <a class="u-email email" href="mailto:{{ site.data.cv.email }}">{{ site.data.cv.email }}</a> |
+    <strong>Github:</strong>  <a href="https://github.com/{{ site.data.cv.gh }}">@{{ site.data.cv.gh }}</a> |
+    <strong>LinkedIn:</strong>  <a href="https://www.linkedin.com/in/{{ site.data.cv.li }}/">@{{ site.data.cv.li }}</a><br />
+    <strong>Affiliation:</strong> <span class="p-org org"> {{ site.data.cv.org }}</span>,
     <span class="p-locality locality">{{ site.data.cv.city }}</span>,
-    <span class="p-country-name country-name">{{ site.data.cv.country }}</span>
+    <span class="p-country-name country-name">{{ site.data.cv.country }}</span> <br />
   </div><br />
   <div id="objective" class="p-summary summary">
     <p> {{ site.data.cv.summary.text }}</p>

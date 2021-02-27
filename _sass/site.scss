@@ -93,7 +93,8 @@ h2 {
 
 p {
   @include container;
-  line-height: 1rem;
+  line-height: 1.5rem;
+  text-align: justify;
 }
 
 .muted {
@@ -102,23 +103,16 @@ p {
 
 footer {
   @extend .muted;
-  padding: 2rem;
-  text-align: center;
-}
-
-ol, ul {
-  @include container;
-}
-
-li {
-  margin-left: 2rem;
-  margin-right: 2rem;
-  padding: 1rem;
+  p {
+    line-height: 1.5rem;
+    text-align: center;
+  }
 }
 
 code {
   @include container;
-  color: $med_gray;
+  display: flex;
+  padding-left: 4rem;
 }
 
 time {
