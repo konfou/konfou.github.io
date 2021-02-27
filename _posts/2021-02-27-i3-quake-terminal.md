@@ -1,6 +1,6 @@
 ---
 layout: post
-title: i3-quake terminal
+title: i3 quake terminal
 ---
 Whoever has played enough videogames may have seen that few have a
 drop-down console, most prominent example being Quake.  That console is
@@ -25,9 +25,9 @@ for_window [instance="scratchpad"] \
   resize set 80 ppt 40 ppt; \
   move absolute position 283 0
 
-bindsym grave exec $nsid i3-quake
+bindsym grave exec $nsid scratchterm
 ```
-Where i3-quake is the following script found in $PATH.
+Where scratchterm is the following script found in $PATH.
 ```
 #!/usr/bin/env bash
 if ! i3-msg -t get_tree | grep -q '"instance":"scratchpad"'; then
@@ -64,20 +64,29 @@ fi
 ```
 Then someone may run the following command to reset size and location.
 ```
-i3-quake reset
+scratchterm reset
 ```
 This can be also be bound to i3's config, for example to Alt + grave.
 ```
 set $Alt Mod1
-bindsym $Alt+grave exec --no-startup-id i3-quake reset
+bindsym $Alt+grave exec --no-startup-id scratchterm reset
 ```
 
-For a window manager-independent way to do it [tdrop][] can help, which
-also comes with various other goodies.  As a downside it depends on few
-X tools (xprop, xwininfo, xdotool).  A barebones alternative as in above
-can be done just using xdotool.
+Some more featureful i3-specific alternatives will be using one of
+[i3-quickterm][], [i3-quake][], [i3-quaketerm][], and [i3quake][].  The
+first three are Python programs whereas the last is written in Go.  The
+last actually sets up the window and then i3's scratchpad show is used.
+Therefore it can be used in place of calling urxvt directly and
+for_window in i3 config.  For a window manager-independent way to do it
+[tdrop][] can help, which also comes with various other goodies.  As a
+downside it depends on few X tools (xprop, xwininfo, xdotool).  A
+barebones alternative as in above can be done just using xdotool.
 
 [Guake]: http://guake-project.org/
 [Tilda]: https://github.com/lanoxx/tilda
 [Yakuake]: https://invent.kde.org/utilities/yakuake
 [tdrop]: https://github.com/noctuid/tdrop
+[i3-quickterm]: https://github.com/lbonn/i3-quickterm
+[i3-quake]: https://github.com/NearHuscarl/i3-quake
+[i3-quaketerm]: https://github.com/gawen947/i3-quaketerm
+[i3quake]: https://hg.sr.ht/~ser/i3quake
