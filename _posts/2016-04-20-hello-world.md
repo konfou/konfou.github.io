@@ -2,7 +2,7 @@
 layout: post
 title: Hello, World!
 ---
-```C
+```
 #include <stdio.h>
 int main(void)
 {
