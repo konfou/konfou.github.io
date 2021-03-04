@@ -19,18 +19,21 @@ parts.
 Though conceptually  interesting, it has some  limitations. Specifically
 there're incompatibilities  and anything requiring a  real kernel cannot
 run. This is  where WSL2 comes in. [WSL2  is][wsl-compver] a lightweight
-VM running  an actual  Linux kernel  image. Rather  using the  host file
-system, it uses an extendable virtual  hard disk image. This approach is
-similar to now unmaintained coLinux.
+Hyper-V-based VM running an actual  Linux kernel image. Rather using the
+host file  system, it uses an  extendable virtual hard disk  image. This
+approach is similar to now unmaintained coLinux.
 
 In this post I'll showcase how Linux  GUI programs can run on Windows by
-utilizing  the  WSL  starting  from WSL  installation  itself.  There're
+utilizing  the  WSL starting  from  WSL  installation itself.   There're
 various guides around the web but  none is CLI-focused meaning you've to
 follow a Windows  workflow of next-next-finish rather  Linux workflow of
-running a  bunch of commands  and be done  with. That said,  all Windows
-command-lines, on  which the commands  mentioned will be  used, require,
-except  if  mentioned  otherwise,  elevates  privileges  (being  run  as
-administrator).
+running a bunch  of commands and be  done with.  That said,  this is the
+same approach widely known (specifically this  post is based on [Win Dev
+AppConsult][src-x] for graphics and [x410.dev][src-pa] for sound).
+
+Note that  all Windows  command-lines, on  which the  commands mentioned
+will  be   used,  require,  except  if   mentioned  otherwise,  elevated
+privileges (being run as administrator).
 
 ## Installation
 
@@ -137,9 +140,10 @@ rule has to be changed to allow for WSL subnet.
 netsh advfirewall firewall set rule name="VcXsrv windows xserver" profile=Public protocol=TCP new action=Allow remoteip=172.16.0.0/12
 ```
 
-Programs can't  connect to the  running X  server before setting  up the
-`DISPLAY` environmental variable. Rather  running the following commands
-on every login manually, they can be added to `~/.bashrc`.
+Now, moving on to the Linux shell. Programs can't connect to the running
+X server before setting up  the `DISPLAY` environmental variable. Rather
+running  the following  commands on  every login  manually, they  can be
+added to `~/.bashrc`.
 
 If WSL1 is used, add the following.
 
@@ -168,10 +172,15 @@ export GDK_SCALE=$disp_scaling
 export QT_SCALE_FACTOR=$disp_scaling
 ```
 
-Then  you can  test whether  everything has  been successful  by running
-`xeyes`. Rather  opening the shell  to launch something, a  shortcut can
-made. For example in order to run `xeyes` make a shortcut with following
-as location.
+Test the X forwarding configuration by running `xeyes` installed with
+
+```
+sudo apt install x11-apps
+```
+
+Rather opening the  shell to launch something, a shortcut  can made. For
+example  in order  to  run `xeyes`  make a  shortcut  with following  as
+location.
 
 ```
 wsl.exe bash -i -c "xeyes"
@@ -220,18 +229,12 @@ location, replacing `xeyes` with whatever program one wants.
 wscript.exe C:\Users\user\wslu\runHidden.vbs debian.exe run /usr/share/wslu/wslusc-helper.sh "xeyes"
 ```
 
-Test the X forwarding configuration by running `xeyes` installed with
-
-```
-sudo apt install x11-apps
-```
-
 ## Sound
 
-Similarly  to graphics  (with Wayland  not anymore  but anyway),  modern
-GNU/Linux distros  use a client-server  model for  audio as well  in the
-form of PulseAudio.  An old PulseAudio version can  either be downloaded
-from [freedesktop's PulseAudio page][fd-pa] using (non-admin) PowerShell
+Similarly  to   graphics,  traditional  GNU/Linux  environments   use  a
+client-server model for audio as well in the form of PulseAudio.  An old
+PulseAudio  version   can  either  be  downloaded   from  [freedesktop's
+PulseAudio page][fd-pa] using (non-admin) PowerShell
 
 ```
 $Site = "https://bosmans.ch/pulseaudio"
@@ -343,9 +346,29 @@ Test the sound configuration by playing a random noise.
 pacat /dev/urandom
 ```
 
+A better option  for both graphics and sound to  the ones mentioned, are
+[using AF_UNIX][vcxsrv-wsl] (Unix domain sockets) rather TCP networking.
+Not only har better performance but  is less resource intensive as well.
+A [presentation][vcxsrv-wsl-yt] was done by  Martin Wang on his channel.
+Unfortunately though process is exactly  similar in Windows side (thanks
+to Martin  providing pre-built packages), it  requires patching packages
+in Linux side.  Also, WSL2 isn't  supported.  For WSL2 a superior option
+for graphics  is using VSOCK (virtual  socket).  This can be  done using
+[wsld] and  also solves  some other issues  that the  approach presented
+has.  The program  comes in two parts, one installed  in each side.  The
+program in Linux side will forward Unix socket over VSOCK to the program
+in Windows side which then will forward  it to TCP to which the X server
+listens to. Though it isn't  supported, the exactly similar approach can
+be  applied  to  PulseAudio.   In  any case  with  WSLG,  a  first-party
+Wayland-based native display server on  tracks the graphics part will be
+solved. See [presentation][wslg-yt] by Steve Pronovast on XDC 2020.
+
+
 [wsl-about]: https://docs.microsoft.com/en-us/windows/wsl/about
 [blog-wsl-overview]: https://docs.microsoft.com/en-us/archive/blogs/wsl/windows-subsystem-for-linux-overview
 [wsl-compver]: https://docs.microsoft.com/en-us/windows/wsl/compare-versions
+[src-x]: https://techcommunity.microsoft.com/t5/windows-dev-appconsult/running-wsl-gui-apps-on-windows-10/ba-p/1493242
+[src-pa]: https://x410.dev/cookbook/wsl/enabling-sound-in-wsl-ubuntu-let-it-sing/
 [canonical]: https://ubuntu.com/wsl
 [wsl-install]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 [wsl-distros]: https://docs.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions
@@ -355,3 +378,7 @@ pacat /dev/urandom
 [fd-pa]: https://www.freedesktop.org/wiki/Software/PulseAudio/Ports/Windows/Support/
 [x2go-pa]: https://code.x2go.org/releases/binary-win32/3rd-party/pulse/
 [fd-pa-net]: https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Network/
+[vcxsrv-wsl]: https://github.com/Martin1994/vcxsrv-wsl/wiki/Launch-GUI-applications-in-WSL-with-Unix-Domain-Socket
+[vcxsrv-wsl-yt]: https://www.youtube.com/watch?v=xKclDH0MYC8
+[wsld]: https://github.com/nbdd0121/wsld
+[wslg-yt]: https://www.youtube.com/watch?v=EkNBsBx501Q
