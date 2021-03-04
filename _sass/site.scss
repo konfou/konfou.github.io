@@ -13,8 +13,8 @@ $link: $double_col_white;
 $link_hov: $beauty_bush;
 $med_gray: $gray;
 
-$mono: "DejaVu Sans Mono", "Liberation Mono", monospace !default;
-$sans: "DejaVu Sans Book", "Liberation Sans", sans !default;
+$mono: "DejaVu Sans Mono", "Liberation Mono", "Consolas", monospace !default;
+$sans: "DejaVu Sans Book", "Liberation Sans", "Calibri", sans !default;
 $maxcols: 80ch;
 
 @mixin container {
