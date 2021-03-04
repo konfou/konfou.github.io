@@ -237,7 +237,7 @@ from [freedesktop's PulseAudio page][fd-pa] using (non-admin) PowerShell
 $Site = "https://bosmans.ch/pulseaudio"
 $Pkg = "pulseaudio-1.1.zip"
 Invoke-WebRequest -Uri $Site/$Pkg -OutFile $Pkg -UseBasicParsing
-Expand-Archive -LiteralPath $Pkg -DestinationPath C:\pulseaudio
+Expand-Archive -LiteralPath $Pkg -DestinationPath C:\pulse
 Remove-Item $Pkg
 ```
 
@@ -253,14 +253,14 @@ A more recent version can be downloaded from [X2go's site][x2go-pa].
 $Site = "https://code.x2go.org/releases/binary-win32/3rd-party/pulse"
 $Pkg = "pulseaudio-5.0-rev18.zip"
 Invoke-WebRequest -Uri $Site/$Pkg -OutFile $Pkg -UseBasicParsing
-Expand-Archive -LiteralPath $Pkg -DestinationPath C:\pulseaudio
+Expand-Archive -LiteralPath $Pkg -DestinationPath C:\
 Remove-Item $Pkg
 ```
 
 The modifications required are similar  for the two PulseAudio versions.
 Only difference  is the  files used.   For the  old version,  append the
-following lines to file  `etc\pulse\default.pa`.  For the newer version,
-create a file `config.pa` in the `pulse` directory.
+following lines to file  `C:\pulse\etc\pulse\default.pa`.  For the newer
+version, create a file `config.pa` in the `C:\pulse` directory.
 
 ```
 load-module module-waveout sink_name=output source_name=input record=0
@@ -280,11 +280,11 @@ load-module module-esound-protocol-tcp auth-ip-acl=172.16.0.0/12
 load-module module-native-protocol-tcp auth-ip-acl=172.16.0.0/12
 ```
 
-Then run the `bin\pulseaudio.exe` binary  if running the old version, or
-make the following shortcut if running the newer version.
+Then  run the  `C:\pulse\bin\pulseaudio.exe` binary  if running  the old
+version, or make the following shortcut if running the newer version.
 
 ```
-C:\pulseaudio\pulse\pulseaudio.exe -F C:\pulseaudio\pulse\config.pa
+C:\pulse\pulseaudio.exe -F C:\pulse\config.pa
 ```
 
 Similar to  VcXsrv before,  on first run,  allow private  network access
@@ -297,18 +297,19 @@ netsh advfirewall firewall set rule name="pulseaudio" profile=Public protocol=TC
 
 By default  PulseAudio will exit  in 20s  if no client  connection takes
 place. Because that  is probably unwanted behavior the  following can be
-appended to `etc\pulse\daemon.conf`
+appended  to `C:\pulse\etc\pulse\daemon.conf`  if the  first verison  is
+used.
 
 ```
 exit-idle-time = -1
 ```
 
 Alternatively  the  `--exit-idle-time=-1`  argument  can  be  used  when
-running the binary. That applies to both versions. So someone can make a
-shortcut that runs
+running the binary. That applies to both versions. For the newer version
+combining with the previous, someone can make a shortcut that runs
 
 ```
-C:\pulseaudio\bin\pulseaudio.exe --exit-idle-time=-1
+C:\pulse\pulseaudio.exe -F C:\pulse\config.pa --exit-idle-time=-1
 ```
 
 Then install PulseAudio on the distro
