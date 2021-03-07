@@ -4,6 +4,7 @@ permalink: /posts/
 description: irregularly updated writings on stuff that interest me
 layout: blog
 ---
+<div class="container">
   <h1>Posts</h1>
 {% for post in site.posts %}
     <p class="flex-justify h-entry hentry">
@@ -11,3 +12,4 @@ layout: blog
       <time class="dt-published published" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d/%m/%Y" }}</time>
     </p>
 {% endfor %}
+</div>
