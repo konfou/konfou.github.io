@@ -84,7 +84,7 @@ project.
 
 ```
 wget "https://raw.githubusercontent.com/saitoha/libsixel/master/images/snake.png"
-icat snake.png
+catix snake.png
 ```
 
 A similar to this but more advanced, giving some more options, script is

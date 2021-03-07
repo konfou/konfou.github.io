@@ -163,7 +163,7 @@ takes place.
 
 ## Set-up X
 
-A display  manager also  loads the `~/.pam\_environment`.  The variables
+A display  manager also  loads the `~/.pam_environment`.   The variables
 used in  it have to  be moved to `~/.profile`  before starting up  X. It
 should be noted that on NixOS there's no `/etc/environment` file, rather
 environment  variables  set  in   configuration.nix  will  be  added  in

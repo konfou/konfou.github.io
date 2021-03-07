@@ -175,7 +175,7 @@ export QT_SCALE_FACTOR=$disp_scaling
 Test the X forwarding configuration by running `xeyes` installed with
 
 ```
-sudo apt install x11-apps
+$ sudo apt install x11-apps
 ```
 
 Rather opening the  shell to launch something, a shortcut  can made. For
@@ -218,7 +218,7 @@ Then a shortcut for `COMMAND` to user's Desktop on host can be made with
 the following
 
 ```
-wslusc -g COMMAND
+$ wslusc -g COMMAND
 ```
 
 where  `-g` is  required for  GUI programs.  After having  it run  once,
@@ -343,7 +343,7 @@ export PULSE_SERVER=tcp:$(awk '/nameserver/{print $2}' /etc/resolv.conf)
 Test the sound configuration by playing a random noise.
 
 ```
-pacat /dev/urandom
+$ pacat /dev/urandom
 ```
 
 A better option  for both graphics and sound to  the ones mentioned, are

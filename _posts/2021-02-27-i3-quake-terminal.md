@@ -20,27 +20,27 @@ that  "drop-down"  terminal  to  grave accent  (similar  to  Quake)  the
 following may be added to i3's config.
 
 ```
-for_window [instance="scratchpad"] \
+for_window [instance="scratchterm"] \
   move scratchpad; \
   scratchpad show; \
   resize set 80 ppt 40 ppt; \
   move absolute position 283 0
 
-bindsym grave exec $nsid scratchterm
+bindsym grave exec --no-startup-id scratchterm
 ```
 
 Where `scratchterm` is the following script found in `$PATH`.
 
 ```
-#!/usr/bin/env bash
-if ! i3-msg -t get_tree | grep -q '"instance":"scratchpad"'; then
-  urxvt -name scratchpad &
+#!/bin/sh
+if ! i3-msg -t get_tree | grep -q '"instance":"scratchterm"'; then
+  urxvt -name scratchterm &
 else
-  i3-msg "[instance=\"scratchpad\"] scratchpad show"
+  i3-msg "[instance=\"scratchterm\"] scratchpad show"
 fi
 ```
 
-If no  terminal with scratchpad class  name is being run,  it runs urxvt
+If no terminal  with scratchterm class name is being  run, it runs urxvt
 with specific  name, then i3 moves  it to scratchpad, shows  it, resizes
 and moves it to  top of display.  The script may also  be edited to open
 another  terminal than  urxvt.  On  subsequent calls  it just  shows the
@@ -54,16 +54,16 @@ resize and move command.  A simpler way is modifying the above script to
 include such "reset" functionality.
 
 ```
-#!/usr/bin/env bash
-if ! i3-msg -t get_tree | grep -q '"instance":"scratchpad"'; then
-  urxvt -name scratchpad &
+#!/bin/sh
+if ! i3-msg -t get_tree | grep -q '"instance":"scratchterm"'; then
+  urxvt -name scratchterm &
 else
-  if [[ "$1" == "reset" ]]; then
-    i3-msg "[instance=\"scratchpad\"]
+  if [ "$1" == "reset" ]; then
+    i3-msg "[instance=\"scratchterm\"]
       resize set 80 ppt 40 ppt,
       move absolute position 283 0"
   else
-    i3-msg "[instance=\"scratchpad\"] scratchpad show"
+    i3-msg "[instance=\"scratchterm\"] scratchpad show"
   fi
 fi
 ```

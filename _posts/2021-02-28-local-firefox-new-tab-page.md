@@ -84,7 +84,7 @@ Then the following script can be used
 
 ```
 #!/bin/sh
-wwwd=~/srv/www/home_page/
+wwwd=~/srv/www/startpage/
 inliner $wwwd/index.html > $wwwd/index.inliner.html
 ```
 
