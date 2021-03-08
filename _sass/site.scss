@@ -33,13 +33,28 @@ $maxcols: 80ch;
   @include container;
 }
 
+* {
+  scrollbar-color: $scroll_fg $scroll_bg;
+}
+
+*::-webkit-scrollbar {
+  width: auto;
+}
+
+*::-webkit-scrollbar-track {
+  background: $scroll_bg; 
+}
+ 
+*::-webkit-scrollbar-thumb {
+  background: $scroll_fg;
+}
+
 body {
   background-color: $bg;
   color: $fg;
   font-family: $mono;
   padding: 5rem 0 0 0;
   margin: 0;
-  scrollbar-color: $scroll_fg $scroll_bg;
 }
 
 a {
