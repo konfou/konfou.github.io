@@ -1,0 +1,22 @@
+/* sources:
+ *   https://github.com/bbatsov/zenburn-emacs/blob/master/zenburn-theme.el
+ *   https://github.com/belak/base16-emacs/blob/master/base16-theme.el
+ *   https://github.com/jrblevin/markdown-mode/blob/master/markdown-mode.el
+ */
+
+$background:      $base00;
+$border:          $base03;
+$blockquote:      $base04; //:inherit font-lock-doc-face
+$code:            $base09; //:inherit fixed-pitch
+$dimmed:          $base04;
+$foreground:      $base05;
+$info:            $base0B; //:inherit font-lock-string-face
+$keyword:         $base0A; //:inherit font-lock-type-face
+$link:            $base0D;
+$link-hover-bg:   $base02;
+$link-visited:    $base0E;
+$region:          $base02;
+$scroll-bg:       $base01; //?
+$scroll-fg:       $base04; //?
+$scroll-fg-hover: $base06;
+$subject:         $base0A;

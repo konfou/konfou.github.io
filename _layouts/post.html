@@ -9,7 +9,7 @@ layout: blog
   <p><time datetime="{{ page.date | date: '%Y-%m-%d' }}"
            itemprop="datePublished" class="dt-published published">{{ page.date | date: "%-d %B %Y" }}</time></p>
   <div itemprop="articleBody" class="e-content">
-    {% include anchor_headings.html anchorBody="##" beforeHeading=true html=content %}
+    {% include anchor_headings.html anchorBody="" beforeHeading=true html=content %}
   </div>
 </article>
 

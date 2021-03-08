@@ -1,40 +1,23 @@
-$nero: #262626;
-$mine_shaft: #3f3f3f;
-$dim_gray: #6c6c6c;
-$dove_gray: #6f6f6f;
-$gray: #8f8f8f;
-$edward: #9fafaf;
-$moon_mist:#dcdccc;
-$beauty_bush: #ecbcbc;
-$double_col_white: #f0dfaf;
+@import 'base16-styles/base16-zenburn.scss';
+@import 'base16.scss';
 
-$bg: $mine_shaft;
-$fg: $moon_mist;
-$head: $edward;
-$link: $double_col_white;
-$link_hover: $beauty_bush;
-$scroll_fg: $dim_gray;
-$scroll_bg: $nero;
-$med: $gray;
+//override
+$blockquote:      #7f9f7f;
+$link:            #efdcbc;
+$link-hover:      #f8f893;
+$link-visited:    #dca3a3;
+$subject:         #aaaaaa;
 
-$mono: "DejaVu Sans Mono", "Liberation Mono", "Consolas", monospace !default;
-$sans: "DejaVu Sans Book", "Liberation Sans", "Calibri", sans !default;
+$mono: "DejaVu Sans Mono", "Consolas", monospace !default;
+$sans: "DejaVu Sans Book", "Calibri", sans !default;
 $maxcols: 80ch;
 
-@mixin container {
-  max-width: $maxcols;
-  padding: 0 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5rem;
-}
-
-.container {
-  @include container;
-}
-
 * {
-  scrollbar-color: $scroll_fg $scroll_bg;
+  scrollbar-color: $scroll-fg $scroll-bg;
+}
+
+*::selection {
+  background: $region;
 }
 
 *::-webkit-scrollbar {
@@ -42,16 +25,16 @@ $maxcols: 80ch;
 }
 
 *::-webkit-scrollbar-track {
-  background: $scroll_bg; 
+  background: $scroll-bg; 
 }
  
 *::-webkit-scrollbar-thumb {
-  background: $scroll_fg;
+  background: $scroll-fg;
 }
 
 body {
-  background-color: $bg;
-  color: $fg;
+  background-color: $background;
+  color: $foreground;
   font-family: $mono;
   padding: 5rem 0 0 0;
   margin: 0;
@@ -60,9 +43,24 @@ body {
 a {
   color: $link;
   text-decoration: none;
-  &:hover {
-    color: $link_hover;
+  &:visited {
+    color: $link-visited;
   }
+  &:hover {
+    @if variable-exists(link-hover) {
+      color: $link-hover;
+    } @else {
+      background: $link-hover-bg; 
+    }
+  }
+}
+
+@mixin container {
+  max-width: $maxcols;
+  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5rem;
 }
 
 .home {
@@ -77,6 +75,10 @@ a {
   }
 }
 
+.container {
+  @include container;
+}
+
 .flex-justify {
   display: flex;
   flex-wrap: wrap;
@@ -84,7 +86,7 @@ a {
 }
 
 .muted {
-  color: $med;
+  color: $dimmed;
 }
 
 footer {
@@ -99,23 +101,36 @@ time {
   @extend .muted;
 }
 
+@mixin heading {
+  color: $subject;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 header {
   position: absolute;
   top: 0;
   width: 100%;
   text-align: center;
-  background-color: $bg;
-  border-bottom: 1px solid $med;
+  border-bottom: 1px solid $border;
+  h2 {
+    @include heading;
+  }
 }
 
 article {
   @include container;
 }
 
-h1, h2 {
-  color: $head;
-  font-size: 1rem;
-  font-weight: bold;
+$anchor: "#";
+@for $j from 1 through 6 {
+  main h#{$j} {
+    @include heading;
+    a:before {
+      content: $anchor;
+    }
+  }
+  $anchor: $anchor + "#";
 }
 
 p {
@@ -128,15 +143,18 @@ pre {
   margin: 1rem;
 }
 
-.highlight {
-  display: flex;
-  padding-left: 2ch;
-}
-
 blockquote {
+  color: $blockquote;
   font-style: italic;
   p {
-    box-sizing: border-box;
-    padding: 0 2ch;
+    padding-left: 2ch;
   }
+}
+
+code {
+  color: $code;
+}
+
+.highlight {
+  padding-left: 2ch;
 }
