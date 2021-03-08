@@ -192,4 +192,3 @@ cp $tempja $omnija
 [corel]: https://support.mozilla.org/en-US/questions/1283835#answer-1303758
 [vallode]: https://support.mozilla.org/en-US/questions/1291938#answer-1331299
 [mdnomnija]: https://developer.mozilla.org/en-US/docs/Mozilla/About_omni.ja_(formerly_omni.jar)
-

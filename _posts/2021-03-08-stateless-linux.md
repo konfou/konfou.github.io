@@ -93,7 +93,7 @@ centrally and represents  a Nix recipe. When a rebuild  of the system is
 requested the  expressions within that  recipe are evaluated, and  a new
 "image", called  derivation, gets  build marking  a new  generation. The
 system can  then switch  to this new  image. Specifically,  the packages
-required  and their  assets and  installed  in a  read-only store  under
+required  and their  assets are  installed  in a  read-only store  under
 `/nix`  and  some  directories  are populated  with  symlinks  to  files
 resulting from the evaluation.
 

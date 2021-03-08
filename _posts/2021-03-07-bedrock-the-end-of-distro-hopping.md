@@ -85,7 +85,7 @@ The Arch's package manager `pacman` will then become available. Packages
 can be installed like on Arch. For example to install `hello`, just do
 
 ```
-# pacman -S hello 
+# pacman -S hello
 ```
 
 Rather manually using each package  manager, `pmm` is provided which can
