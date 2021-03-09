@@ -122,7 +122,11 @@ technologies, most prominent [libostree] and [Flatpak].
 
 Though less clean, flexible, and powerful  approach than Nix, it is also
 simpler, not  requiring learning a domain-specific  language and instead
-continue using an already known toolset, that of the host distro.
+continue using an already known toolset, that of the host distro. On the
+issue of domain-specific language, [GNU Guix][Guix] is a Nix-like system
+replacing Nix  language with Guile,  a Scheme dialect and  GNU's project
+programming  and  extension language.   Guix  System  is the  Guix-based
+distribution akin to NixOS.
 
 [redhat2004]: https://web.archive.org/web/20040918071252/http://people.redhat.com/~hp/stateless/StatelessLinux.pdf
 [summit2006]: https://people.redhat.com/notting/summit/summit-nottingham.pdf
@@ -141,3 +145,4 @@ continue using an already known toolset, that of the host distro.
 [Silverblue]: https://silverblue.fedoraproject.org/
 [libostree]:https://ostreedev.github.io/ostree/
 [Flatpak]: https://flatpak.org/
+[Guix]: https://guix.gnu.org/
