@@ -65,10 +65,10 @@ will appear on TV.
 adb connect 192.168.1.2
 ```
 
-Files can be send with
+Files can be sent with
 
 ```
-adb push
+adb push /path/to/file/to/sent /mnt/sdcard/
 ```
 
 Programs can be installed with
@@ -176,7 +176,7 @@ Firefox for Fire TV can run fine on Android TVs.
 
 Someone  has   to  download   the  (latest   available)  apk   from  the
 [releases][firefox-tv-releases] page  and then  install it  either using
-`apk` or sending it on TV by other means (see previous section).
+`adb` or sending it on TV by other means (see previous section).
 
 ## Media player
 
@@ -185,7 +185,7 @@ pre-installed media player is usually  available but is very simple. One
 of the most popular media players on computers, [VLC], is also available
 for Android with a [TV-suitable interface][vlc-android-tv] available. It
 can be  installed from  the [Store][vlc-store]  or downloaded  from [the
-official site][vlc-releases] and installed using  `apk` or sending it on
+official site][vlc-releases] and installed using  `adb` or sending it on
 TV and  installing it  there. VLC allows  adding and  reading (S)FTP(S),
 SMB, and NFS locations.
 
@@ -194,13 +194,13 @@ started  using  [mpv][mpv],   a  CLI-first  keyboard-driven  application
 lacking a traditional interface. It is  a fork of (short lived) mplayer2
 that in  turn is a fork  of venerable (and still  alive) [MPlayer] which
 predates VLC itself. Both mpv (and ancestors) and VLC essentially depend
-on ffmpeg.  An unofficial Android  port exists called  [mpv-android]. It
-can  be installed  from the  [Store][mpv-android-store] (not  on TV)  or
-downloaded  from   [releases][mpv-android-releases]  page.   Unlike  its
-computer counterpart it  has a minimal GUI to allow  opening files (only
-from internal storage) and editing  some configuration. In order to play
-from external storage or  a network location it has to  be opened from a
-file managers (which for later it has to be supported from the manager).
+on ffmpeg.  An  unofficial Android port exists  called [mpv-android]. It
+can be installed by downloading it from [releases][mpv-android-releases]
+page.  Unlike  its computer counterpart  it has  a minimal GUI  to allow
+opening   files  (only   from   internal  storage)   and  editing   some
+configuration.   In order  to play  from external  storage or  a network
+location it has to  be opened from a file managers  (which for the later
+it has to be supported from the manager).
 
 ## Streaming
 
@@ -248,18 +248,33 @@ Framework  this doesn't  work for  OTA  broadcasting. It  can either  be
 downloaded from [Store][kodi-store]  or the [releases][kodi-releases] on
 the official site.
 
-
 ## Media sharing
 
-Kodi is nice if storage is mounted  directly on the device or is network
-accessible.   The  problem   is  what   to   do  when   none  of   those
+Till here all is nice if storage is mounted directly on the device or is
+network  accessible.  The  problem  is what  to do  when  none of  those
 happen. Specifically suppose  you've some media files on  the laptop you
-want to watch on TV. Till here the  options are, (i) send the file on TV
-and  (ii) Chromecast.  The first  is  ridiculous whereas  the second  is
+want to watch on TV. The options shown  are, (i) send the file on TV and
+(ii)  Chromecast.   The  first  is  ridiculous  whereas  the  second  is
 computer-first  approach. If  things are  organized and  searching isn't
 required,  the media  center  interface is  kinda  comfy making  casting
 unnecessary.
 
+The solution is setting up a server on laptop or/and other devices, that
+is making  the devices network  accessible. This is  a bit of  hassle. A
+simpler solution is  using software meant for this  purpose, employing a
+client-server model.
+
+The first and more popular software  to do this is [Plex], a proprietary
+freemium system and nowadays ad-supported  streaming service as well. It
+is actually  a media  player with  client-server model  originating from
+Kodi  (then known  as  XMBP).   Though very  polished,  my media  server
+software of choice is [Jellyfin]. Jellyfin is a fork of, formerly mostly
+open-source with  closed-source components  and now  proprietary, [Emby]
+which was  originally made as  a own-content-only Plex  alternative with
+plug-in   support.    Jellyfin   for   TV   can   be   downloaded   from
+[Store][jellyfin-tv-store] or the [releases][jellyfin-tv-releases].
+
+Both require a media server to be setup on devices which hold the media.
 Let's move a bit  further than what a vanilla HTPC is  supposed to do to
 what  is usually  expected  to  do. It  shouldn't  be  capable of  media
 playback   but   also    allow   access   to   its    media   to   other
@@ -267,15 +282,10 @@ devices. Concluding,  we'll require  to set-up a  server on  two devices
 which can be complicated. The solution  is a program that functions both
 as a server and as a player that makes media sharing seamless.
 
-The first and more popular software  to do this is [Plex], a proprietary
-freemium system and nowadays ad-supported  streaming service as well. It
-is actually  a media  player with  client-server model  originating from
-Kodi  (then  known as  XMBP).  Though  very  polished, my  media  server
-software of choice is [Jellyfin]. Jellyfin is a fork of, formerly mostly
-open-source with  closed-source components  and now  proprietary, [Emby]
-which was  originally made as  a own-content-only Plex  alternative with
-plug-in     support.     Jellyfin     can     be     downloaded     from
-[Store][jellyfin-tv-store] or the [releases][jellyfin-tv-releases].
+That program is,  the mentioned in previous section, Kodi.   Kodi can be
+used as  an UPnP  client that can  receive music and  video from  a UPnP
+server on the network, but can also be used as a UPnP server itself that
+will stream its library contents to other players on the network.
 
 ## Issues
 
@@ -295,16 +305,22 @@ lower  resolution. Utilizing  a specific  API it  is possible  to render
 video to  the 4K  output directly. Unfortunately  all apps  mentioned in
 this post don't and only a handful do such as YouTube and Netflix.
 
-Others are codec issues. ARM installed  on TVs aren't M1-level beasts by
-any  margin,  meaning  that  videos  with  codecs  not  having  hardware
-acceleration  will be  hard  to run  if run  at  all. Also  high-quality
-configurations  for mpv  on desktop  will've  difficulty to  run in  any
-case. On topic of  quality, lack of x86 and Windows  also means no madVR
-possibility.
+Others  are codec  issues. ARM  CPUs  installed on  TVs aren't  M1-level
+beasts  by any  margin, meaning  that videos  with encodings  not having
+hardware  acceleration  will  be  hard  to  run  if  run  at  all.  Also
+high-quality configurations used at mpv on desktop will've difficulty to
+run in any case. On topic of quality, lack of x86 and Windows also means
+no madVR possibility.
 
 Beyond any  issues, a smart TV  and stand-alone NAS is  simpler, cheaper
 and more than enough  for most users than building a  HTPC. And with the
 move to streaming rather using local content the NAS is also unneeded.
+
+>TODO: Provide instructions for setting up Kodi and Jellyfin.
+
+>TODO: Provide instructions for running a server PC-side.
+
+>TODO: Provide instructions for setting up a NAS.
 
 [smart_tv]: https://en.wikipedia.org/wiki/Smart_TV
 [android_tv]: https://en.wikipedia.org/wiki/Android_TV
