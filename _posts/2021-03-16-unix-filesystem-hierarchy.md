@@ -15,6 +15,10 @@ requires][posix] the following directories
 
 Also the binaries `/bin/sh` and `/usr/bin/env` are required.
 
+In this post I won't go  into historical significance of its directories
+and the reason they were created in initial times of Unix.  Rather, this
+will be a presentation alongside some commentary for modern systems.
+
 ## FHS
 
 An  attempt to  standardization  comes from  Linux  that has  introduced
@@ -32,25 +36,25 @@ The following top-level (root)  hierarchy structure are the non-optional
 (sans `/home` and `/root`) and  the Linux specific directories specified
 in the latest version ([FHS v3.0][fhs], released 2015).
 
-| /        | Root filesystem                         |
-| /bin     | Essential user command binaries         |
-| /boot    | Static files for the boot loader        |
-| /dev     | Device files (virtfs)                   |
-| /etc     | Host-specific system configuration      |
-| /home    | User home directories (optional)        |
-| /lib     | Essential shared libraries              |
-| /media   | Mount point for removable media         |
-| /mnt     | Temporary mount point                   |
-| /opt     | Application software packages           |
-| /proc    | Kernel and process information (virtfs) |
-| /root    | Home directory for root user (optional) |
-| /run     | Run-time variable data                  |
-| /sbin    | Essential system binaries               |
-| /srv     | Data for system provided services       |
-| /sys     | Kernel and system information (virtfs)  |
-| /tmp     | Run-time temporary files                |
-| /usr     | Secondary hierarchy                     |
-| /var     | Variable data                           |
+| /      | Root filesystem                         |
+| /bin   | Essential user command binaries         |
+| /boot  | Static files for the boot loader        |
+| /dev   | Device files (virtfs)                   |
+| /etc   | Host-specific system configuration      |
+| /home  | User home directories (optional)        |
+| /lib   | Essential shared libraries              |
+| /media | Mount point for removable media         |
+| /mnt   | Temporary mount point                   |
+| /opt   | Application software packages           |
+| /proc  | Kernel and process information (virtfs) |
+| /root  | Home directory for root user (optional) |
+| /run   | Run-time variable data                  |
+| /sbin  | Essential system binaries               |
+| /srv   | Data for system provided services       |
+| /sys   | Kernel and system information (virtfs)  |
+| /tmp   | Run-time temporary files                |
+| /usr   | Secondary hierarchy                     |
+| /var   | Variable data                           |
 
 The `/bin` must contain no  subdirectories.  In contrast files in `/etc`
 are  recommended be  stored in  subdirectories.  The  `/usr` and  `/var`
@@ -153,7 +157,10 @@ of the following directories.
 | /run | Volatile data; non-shareable      |
 
 Systems that clean `/var` on reboot  are _volatile_ and is a step before
-[stateless](/posts/stateless-linux).
+[stateless] which means a system bootable without any configuration data
+(empty `/etc`). The idea behind it  is that software should have its own
+defaults making `/etc`  closer to its goal as a  space for host-specific
+configuration.
 
 Continuing on  _historical artifact_  directories, there're  some others
 that are mostly  unusable in modern systems.  An  example being `/media`
@@ -171,11 +178,11 @@ tradition of  lower-case abbreviated  names, and refraining  from making
 new directories in root, I mount local disks in `/srv/vol`.
 
 The  [stali]  distro,  once  a suckless.org  project,  follows  its  own
-simplified  filesystem. Rather  moving  directories to  `/usr` it  loops
-`/usr` back to  root, that is `/usr`  on stali is a  symlink pointing to
-`/`. Also `/sbin` is symlink to pointing to `/bin`. Finally `/share` and
-`/include` are introduced in root,  result of their peculiar merge.  The
-entire  hierarchy is  then the  following  sans the  three virtual  file
+[simplified filesystem][stalifs]. Rather moving directories to `/usr` it
+loops `/usr` back to root, that is `/usr` on stali is a symlink pointing
+to `/`. Also `/sbin` is symlink  to pointing to `/bin`. Finally `/share`
+and `/include` are  introduced in root, result of  their peculiar merge.
+The entire hierarchy  is then the following sans the  three virtual file
 systems (dev, proc, sys).
 
 | /             | Root directory; also root home |
@@ -190,6 +197,13 @@ systems (dev, proc, sys).
 | /sucks        | Anything else                  |
 | /usr -> /     |                                |
 | /var          | Variable data                  |
+
+Obviously  `/media` is  removed  and instead  everything  is mounted  as
+subdirectory  in `/mnt`.   Something worth  noticing is  the absense  of
+`/boot` directory. The kernel as an executable resides in `/bin`.  Also,
+as stali  follows a  static link  philosophy `/lib`  can be  ommited and
+`/usr` is  only for  compatibility.  It  can be  ommited if  software is
+compiled with prefix the root.
 
 ## /home
 
@@ -336,8 +350,8 @@ Concluding,  though standardization  attempts have  happened, filesystem
 hierarchy  remains a  mess.   There're some  proposed alternatives  that
 perform more drastic  changes.  NixOS and its  inspired-from Guix System
 are of  them.  GoboLinux  actually was  made for  this very  purpose; of
-redefining the filesystem  hierarchy.  Home directory is  still all over
-the place since many programs do not adhere to XDG.
+[redefining  the filesystem  hierarchy][gobolinux].   Home directory  is
+still all over the place since many programs do not adhere to XDG.
 
 [posix]: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap10.html
 [fhs]: https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.txt
@@ -345,7 +359,10 @@ the place since many programs do not adhere to XDG.
 [rob]: http://lists.busybox.net/pipermail/busybox/2010-December/074114.html
 [usrmergefd]: https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/
 [usrmergefe]: https://fedoraproject.org/wiki/Features/UsrMove
+[stateless]: /posts/stateless-linux
 [stali]: https://sta.li/
+[stalifs]: https://sta.li/filesystem/
 [xdgspec]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [archxdg]: https://wiki.archlinux.org/index.php/XDG_Base_Directory#Support
 [dottools]: https://wiki.archlinux.org/index.php/Dotfiles#Tools
+[gobolinux]: /posts/gobolinix-redefining-filesystem-hierarchy
