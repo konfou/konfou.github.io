@@ -25,9 +25,9 @@ $maxcols: 80ch;
 }
 
 *::-webkit-scrollbar-track {
-  background: $scroll-bg; 
+  background: $scroll-bg;
 }
- 
+
 *::-webkit-scrollbar-thumb {
   background: $scroll-fg;
 }
@@ -50,7 +50,7 @@ a {
     @if variable-exists(link-hover) {
       color: $link-hover;
     } @else {
-      background: $link-hover-bg; 
+      background: $link-hover-bg;
     }
   }
 }
@@ -156,5 +156,9 @@ code {
 }
 
 .highlight {
+  padding-left: 2ch;
+}
+
+td {
   padding-left: 2ch;
 }
