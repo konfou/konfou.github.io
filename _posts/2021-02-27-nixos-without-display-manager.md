@@ -36,11 +36,11 @@ configuration may be used.
 ```
 
 In order for  the display manager to be suppressed  the following option
-exists.   According  to   the  documentation,   this  enables   a  dummy
+exists.   According   to  the   documentation,  this  enables   a  dummy
 pseudo-display   manager.    Basically    it   disables   LightDM,   the
 display-manager systemd  service and sets  Xorg's log file to  null (see
-[nixpkgs/.../start.nix][nixpkgs]). Most importantly it enables the xinit
-and startx (wrapper to xinit) commands at the global environment.
+<[nixpkgs/.../start.nix][nixpkgs]>).  Most  importantly it  enables  the
+xinit and startx (wrapper to xinit) commands at the global environment.
 
 ```
 ...
@@ -132,7 +132,7 @@ Rather  the following  configuration has  to  be added.   This makes  an
   environment.etc = {
       "profile.local".text = ''
         # /etc/profile.local: DO NOT EDIT -- this file has been generated automatically.
-        if test -f "$HOME/.profile"; then
+        if [ -f "$HOME/.profile" ]; then
           . "$HOME/.profile"
         fi
       '';
@@ -152,7 +152,7 @@ display has been set and only on logging at tty1. Therefore it won't run
 on other consoles or when the shell opens in a terminal.
 
 ```
-if [[ -z "$DISPLAY" ]] && [[ $TTY == "/dev/tty1" ]]; then
+if [ -z "$DISPLAY" ] && [ $TTY == "/dev/tty1" ]; then
   exec startx
 fi
 ```
@@ -163,12 +163,23 @@ takes place.
 
 ## Set-up X
 
-A display  manager also  loads the `~/.pam_environment`.   The variables
-used in  it have to  be moved to `~/.profile`  before starting up  X. It
-should be noted that on NixOS there's no `/etc/environment` file, rather
-environment  variables  set  in   configuration.nix  will  be  added  in
-`/etc/profile`.  This  is the  place where  most of  set up  takes place
-making a display manager even less necessary.
+The  display manager  loads  `~/.xprofile` which  is  used to  execute
+commands at  the beginning  of the  user session,  and `~/.Xresources`
+which sets  parameters for  X applications.  Therefore simply  add the
+following before executing the window manager.
+
+```
+[ -f ~/.xprofile ] && . ~/.xprofile
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+```
+
+A display manager also  loads the `~/.pam_environment`.  The variables
+used in it have  to be moved to `~/.profile` before  starting up X. It
+should  be noted  that on  NixOS there's  no `/etc/environment`  or or
+`/etc/security/pam_env.conf` file, rather environment variables set in
+configuration.nix will be added in  `/etc/profile`.  This is the place
+where most  of set up takes  place making a display  manager even less
+necessary.
 
 Also the  user's dbus  daemon has  to be  set. This  is done  adding the
 following to `~/.xinitrc`, taken from [nixos.wiki].
@@ -189,17 +200,19 @@ This could be  useful in a multi-user environment or/and  if running Nix
 on another  system (non-NixOS).  For  both cases some  modifications are
 required.
 
-Two more essential operations are  (i) loading `~/.Xresources`, and (ii)
-starting the graphical-session target in systemd.
+Finally start the graphical-session target in systemd.
 
 ```
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 systemctl --user start graphical-session.target
 ```
 
 The  graphical-session  target was  made  for  services that  require  a
 graphical session to be running.  As  many services are starting at that
 run level, without the previous some of them will never run.
+
+>TODO: Add systemd-based X autostart
+
+>TODO: Add Wayland (sway) instructions
 
 [Debian]: https://wiki.debian.org/DisplayManager
 [Arch]: https://wiki.archlinux.org/index.php/display_manager

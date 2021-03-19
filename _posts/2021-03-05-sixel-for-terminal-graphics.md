@@ -137,11 +137,11 @@ julia> scatter(rand(100))
 A  library  for  writing  programs outputting  sixel  graphics  is,  the
 mentioned a few times already, [libsixel].  Thanks to libsixel, a number
 of utilities now exist making use of this format. Those utilities can be
-integrated to popular such as w3m  and ranger, in order to provide sixel
-graphics  suspport.  Installing  it you  also get  the `img2sixel`  tool
-which can  be considered  a more  advanced version  of the  two previous
-scripts.   Specifically `img2sixel`  can decode  and play  real-time gif
-animations.
+integrated  to popular  programs such  as w3m  and ranger,  in order  to
+provide sixel  graphics support.   Installing it  also gets  someone the
+`img2sixel` tool which can be considered  a more advanced version of the
+two  previous scripts.   Specifically  `img2sixel` can  decode and  play
+real-time gif animations.
 
 ```
 wget "https://raw.githubusercontent.com/saitoha/libsixel/master/images/seq2gif.gif"
@@ -156,16 +156,15 @@ LaTeX output, and others.
 Closing  up,  the kitty  terminal  has  put  forward [its  own  graphics
 protocol][kitty-gp].  [According to][kitty#33]  kitty's developer Kovid,
 this  protocol is  simpler  and  solves some  inherent  issues in  sixel
-scheme.  The most  essential being that it isn't an  image format on its
-own but rather a way to display images.  The approach is similar to what
-iTerm2 and Mintty have been doing, albeit with their own implementations
-instead.   This   also  solves   another  issue,   the  [lack   of  true
-color][libsixel#44] (24-bit)  in sixel. The  format [supports][aas-http]
-RGB  or   HLS  color   (smaller  color   space;  16-bit)   but  terminal
-implementations may be limited to number of color registers. Sixel being
-palette-based means that for efficiency that number should be low (up to
-256 colors).
-
+scheme.   The most  essential being  that this  protocol isn't  an image
+format on its own  but rather a way to display  images.  The approach is
+similar to what iTerm2 and Mintty  have been doing alongside their sixel
+support,  albeit  with their  own  implementations  instead.  This  also
+solves another issue, the [lack  of true color][libsixel#44] (24-bit) in
+sixel.  The format [supports][aas-http] RGB  or HLS color (smaller color
+space; 16-bit) but terminal implementations  may be limited to number of
+color registers.   Sixel being  palette-based means that  for efficiency
+that number should be low (up to 256 colors).
 
 [sixel]: https://vt100.net/docs/vt3xx-gp/chapter14.html
 [ctlseqs]: https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h2-Sixel-Graphics

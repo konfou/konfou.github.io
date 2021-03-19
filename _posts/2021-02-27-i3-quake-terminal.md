@@ -91,6 +91,8 @@ it [tdrop] can help, which also  comes with various other goodies.  As a
 downside  it depends  on  few  X tools  (xprop,  xwininfo, xdotool).   A
 barebones alternative as in above can be done just using xdotool.
 
+>TODO: Check whether instructions can be adapted for sway
+
 [Guake]: http://guake-project.org/
 [Tilda]: https://github.com/lanoxx/tilda
 [Yakuake]: https://invent.kde.org/utilities/yakuake

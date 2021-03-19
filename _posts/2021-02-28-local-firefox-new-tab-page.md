@@ -181,6 +181,8 @@ cp $tempja $omnija
 ```
 -->
 
+>TODO: Add NixOS instructions for last section
+
 [NewTab-Redirect]: https://github.com/jimschubert/NewTab-Redirect
 [new-tab-homepage]: https://addons.mozilla.org/en-US/firefox/addon/new-tab-homepage/
 [new-tab-override]: https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/

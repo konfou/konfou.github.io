@@ -199,8 +199,8 @@ mostly the same between versions with only version changes.
 ## Concepts in other systems
 
 GoboLinux  is  [influenced][glinfluences]  and  draws  inspiration  from
-others  sytem that  build a  _different_ system  on top  of Unix  based.
-Examples  of  such  systems  are  NeXT, BeOS,  and  AtheOS.  That  said,
+others systems  that build a  _different_ system  on top of  Unix based.
+Examples  of  such systems  are  NeXT,  BeOS,  and AtheOS.   That  said,
 GoboLinux isn't a clone of any of those systems.
 
 NeXT was  already mentioned to  be the  originator of the  top hierarchy

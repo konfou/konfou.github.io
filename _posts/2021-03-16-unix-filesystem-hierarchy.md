@@ -286,10 +286,11 @@ And `~/srv` has (paths relative to it)
 | ./www       | Local sites             |
 
 The XDG directories  can be set in this format  using the following dirs
-file. This also combines desktop and download directory.
+file.  To  disable a  directory, it  can be pointed  to `$HOME`.   In my
+configuration the desktop directory is disabled.
 
 ```
-XDG_DESKTOP_DIR="$HOME/var/tmp"
+XDG_DESKTOP_DIR="$HOME"
 XDG_DOCUMENTS_DIR="$HOME/doc"
 XDG_DOWNLOAD_DIR="$HOME/var/tmp"
 XDG_MUSIC_DIR="$HOME/srv/music"
@@ -323,6 +324,8 @@ to do
 home.file.".<file>".source = ~/etc/<file>;
 home.file."./config/<file>".source = ~/etc/config/<file>;
 ```
+
+>TODO: Make post on dotfiles maintenance
 
 The `~/tmp`  is actually  a symlink to  `~/var/tmp`.  Ideally  it should
 mounted in `tmpfs`,  and be volatile similarly to  root. Unfortunately I

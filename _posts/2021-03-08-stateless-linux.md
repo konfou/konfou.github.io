@@ -101,7 +101,7 @@ On  boot it  is  made sure  that the  filesystem  matches the  specified
 setup. Basically the  only directories actually required  are `/nix` and
 `/boot`.   That  said,  even  if   NixOS  has  a  stateless  declarative
 configuration, it isn't immutable. Ad hoc mutations can still take place
-outside  `/nix` suchs  as configuration  in `/etc`  though Nix  actually
+outside  `/nix` such  as  configuration in  `/etc`  though Nix  actually
 allows  making   any  file  in   any  system  directory.   [A   post  by
 Graham][graham2020] shows how to setup NixOS for immutability.
 

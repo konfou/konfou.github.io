@@ -191,7 +191,7 @@ following vbs  file can be made,  where `command_name` should be  set to
 whatever program someone wants to open.
 
 ```
-Set objShell = CreateObject("Wscript.Shell") 
+Set objShell = CreateObject("Wscript.Shell")
 Dim sh
 Dim command_name
 sh = "%comspec% /c wsl.exe bash -i -c "
@@ -334,7 +334,7 @@ If WSL1 is used, add the following.
 export PULSE_SERVER=tcp:localhost
 ```
 
-If WSL2 is used, add the following. 
+If WSL2 is used, add the following.
 
 ```
 export PULSE_SERVER=tcp:$(awk '/nameserver/{print $2}' /etc/resolv.conf)
@@ -363,6 +363,9 @@ be  applied  to  PulseAudio.   In  any case  with  WSLG,  a  first-party
 Wayland-based native display server on  tracks the graphics part will be
 solved. See [presentation][wslg-yt] by Steve Pronovast on XDC 2020.
 
+>TODO: Add AF_UNIX instructions
+
+>TODO: Add wsld instructions
 
 [wsl-about]: https://docs.microsoft.com/en-us/windows/wsl/about
 [blog-wsl-overview]: https://docs.microsoft.com/en-us/archive/blogs/wsl/windows-subsystem-for-linux-overview
