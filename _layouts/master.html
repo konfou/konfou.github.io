@@ -14,16 +14,16 @@
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="article:author" content="{{ site.author }}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} posts" href="/feed.xml" />
-  <link rel="canonical" href="https://{{ site.url }}{{ page.url }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <link rel="icon" href="{{ site.logo }}">
   <link rel="license" href="//creativecommons.org/licenses/by/4.0/">
   <link rel="stylesheet" type="text/css" href="/assets/css/site.css">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="openid.delegate" href="https://{{ site.url }}">
+  <link rel="openid.delegate" href="{{ site.url }}">
   <link rel="openid.server" href="https://openid.indieauth.com/openid">
   <link rel="authorization_endpoint" href="https://indieauth.com/auth">
   <link rel="me" href="https://twitter.com/konfou">
-  <link rel="pgpkey" type="text/plain" href="https://{{ site.url }}/pgp.asc">
+  <link rel="pgpkey" type="text/plain" href="{{ site.url }}/pgp.asc">
 </head>
 <body>
 {{ content }}
