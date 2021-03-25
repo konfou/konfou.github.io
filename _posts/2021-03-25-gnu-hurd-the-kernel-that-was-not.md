@@ -48,10 +48,10 @@ only Mach  related facilities  and features  required to  support higher
 system layers.  Basically οnly the base upon which operating systems can
 be built is provided.
 
-This  design is  referred to  as microkernels,  and Mach  was among  the
-first.  It  brought forth numerous new  concepts, and it can  be said it
-was  an academical  success.  Nevertheless,  it isn't  state of  the art
-nowadays, something covered in later section.
+This design is referred to as microkernel, and Mach was among the first.
+It brought  forth numerous new  concepts, and it can  be said it  was an
+academical success.  Nevertheless,  it isn't state of  the art nowadays,
+something covered in later section.
 
 Mach's  goal is  to minimize  abstractions provided  by the  kernel, and
 every abstraction  is associated  with a rich  set of  semantics.  Those
@@ -89,7 +89,7 @@ documented in the [kernel principles book][mach-principles].
 
 ## Hurd
 
-In few  word, [GNU  Hurd][hurd] is actually  a collection  of components
+In few  words, [GNU Hurd][hurd]  is actually a collection  of components
 (servers, libraries, and interfaces) than  run atop the Mach microkernel
 and which implements the functionality that a Unix kernel is expected to
 have.  Essentially,  Hurd formally  defines the  communication protocols
@@ -169,19 +169,24 @@ for a future system.
 The shortcomings are
 
  *  Malicious  filesystems,  which  are not  not  considered  by  legacy
-   application; something  reasonable on systems where  filesystems are
+   application; something  reasonable on  systems where  filesystems are
    part of the reliance set.
+
  *  Dynamically  typed objects,  such  as  directory objects  that  also
    implement a file interface which was the case in early Unix systems.
+
  * Dot-dot directory requires server help, which introduces complication
    for chrooted processes. A proposed  solution comes by adopting Plan 9
    semantics, where  the one  responsible for  resolving dot-dot  is the
    application.
+
  * Passive  translators and naming  raises the problem that  a malicious
    user may be able to confuse filesystems.
+
  * Server allocations even if an object has only read access. A proposed
    solution is  having read-only interfaces  designed such that  they do
    not require server allocations.
+
  * Lack  of mechanisms  for enforcing  security policies  for particular
    program instances.
 
@@ -214,7 +219,7 @@ are implemented may be wrong, but  for most intents and purposes that is
 good enough.   It is that _worse  is better_ philosophy that  made Linux
 won and Hurd to never accumulate enough interest.
 
-Also they're  [similarities with Plan  9][hurd-plan9], as well  as major
+Also there're [similarities  with Plan 9][hurd-plan9], as  well as major
 differences.
 
  * The filesystem interface is one  of the more celebrated Plan 9 design
@@ -223,10 +228,12 @@ differences.
    attached to  the filesystem tree,  not all export such  a filesystemx
    interface.   Among  them are  those  that  implement the  filesystems
    themselves.
+
  * Filesystems are decentralized and  clients always talk to the servers
    directly without  making use of  a central virtual  filesystem layer.
    Moreover   the  filesystem   modification  can   be  implemented   as
    translators.
+
  * Both  can modify the private  local environment. Hurd allows  that to
    happen at a lower level.
 

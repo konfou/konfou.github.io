@@ -9,7 +9,7 @@ development of distributed operating systems (see [lecture][ast-dos] and
 their purpose  to provide a single  system to a collection  (network) of
 workstations that connects  (not necessarily joins) them  and makes them
 act like one.  For many  such systems, distributed implies transparency.
-Explaining,  the system  can blur  location of  the resources.   That is
+Explaining, the system  should blur location of the  resources.  That is
 whether a resource is local or remote should be irrelevant.
 
 Though now mostly  lost in history, they still hold  a lasting influence
@@ -39,15 +39,15 @@ connected various LANs together.
 
 Amoeba was  a system written  from scratch.   Though it had  a Unix-like
 interface, the kernel was designed with a microkernel architecture. This
-made it among the first, and basically the very few even now, successful
-microkernel operating  systems. That architecture means  that the system
-has   a  modular   structure  and   is  a   collection  of   independent
-processes. Those  processes can  either be application  programs, called
-_clients_, or _servers_ such as  drivers. The microkernel basic function
-is  to   provide  an  environment   inside  which  client   and  servers
-communicate.   Its job  is to  support threads,  remote procedural  call
-(RPC), memory management,  and I/O. Everything else is  built atop those
-primitives.
+makes  it  among  the  first,  and basically  the  very  few  even  now,
+successful (in  that it was  used for day-to-day  computing) microkernel
+operating systems. That architecture means that the system has a modular
+structure and is a collection  of independent processes. Those processes
+can either be application programs,  called _clients_, or _servers_ such
+as drivers. The microkernel basic  function is to provide an environment
+inside  which client  and servers  communicate.  Its  job is  to support
+threads,   remote  procedural   call  (RPC),   memory  management,   and
+I/O. Everything else is built atop those primitives.
 
 Some Amoeba-specific software outside the kernel is:
 
@@ -65,8 +65,8 @@ Some Amoeba-specific software outside the kernel is:
    naming. The  file and  directory server functionality  in traditional
    (monolithic) operating system are part of the kernel.
 
-Also closely  related to Amoeba  (the reams cooperated  intensively) was
-Orca,  a  programming  language   developed  specifically  for  parallel
+Also closely  related to Amoeba  (the teams cooperated  intensively) was
+[Orca],  a  programming  language developed  specifically  for  parallel
 programming.   Orca allows  creation  of user-defined  data types  which
 processes on different  machines can share in a controlled  way. This in
 effect  simulates  an  object-based  distributed shared  memory  over  a
@@ -178,14 +178,19 @@ following differences.
 
 Microkernel  approaches for  Sprite  were  also explored.   Specifically
 [Sprite  kernel was  ported][sprite-mach]  to run  as user-level  server
-process on  Mach multiserver  operating system,  which was  developed at
-Carnagie Mellon University between 1985  and 1994. The Sprite server was
-smaller  than the  original kernel  and it  contained almost  no machine
-specific code.  As a downsidee  it was benchmarked  at about 1/3  of the
-native perfomance.  An  expected issue as bad performance  was common to
-microkernels of the era.
+process on  [Mach] microkernel, which  was developed at  Carnagie Mellon
+University between 1985 and 1994. The Sprite server was smaller than the
+original kernel and it contained almost  no machine specific code.  As a
+downside it was  benchmarked at about 1/3 of the  native perfomance.  An
+expected issue as bad performance was common to microkernels of the era.
 
-### Running
+### Sprite's demise
+
+The project ended when the kernel  became hard to maintain for its small
+development team.  Another problem  was the inability  to catch  up with
+features added  on commercial  UNIX systems of  the era.  Those features
+weren't  research oriented  making those  tasks mundane  for a  foremost
+research operating system.
 
 The  source  code  is [archived  on  OSPreservProject][ospp-sprite].   A
 precompiled  DECstation  image is  also  available  that can  run  using
@@ -211,16 +216,9 @@ Note that the bootable Sprite image  is merely a demonstration, rather a
 robust  system.  It  misses floating  point and  network support.   Once
 logged in someone can run `xinit` to start the X11 environment.
 
-### Sprite's demise
-
-The project ended when the kernel  became hard to maintain for its small
-development team.  Another problem  was the inability  to catch  up with
-features added  on commercial  UNIX systems of  the era.  Those features
-weren't  research oriented  making those  tasks mundane  for a  foremost
-research operating system.
-
 Ending  this section,  John Ousterhout  also created  the Tcl  scripting
-language and the Tk widget toolkit for this operating system.
+language  and  the  Tk widget  toolkit  [alongside][pptcl-preface]  this
+operating system.
 
 ## Plan 9
 
@@ -300,10 +298,12 @@ paper][inferno-paper]). Also started  by Bell Labs, it  is now developed
 and maintained  by Vita  Nuova.  Inferno  is based on  Plan 9  ideas but
 takes a more radical approach, as seen by the following new aspects.
 
- *  [Limbo],  a  new  garbage-collected concurrent  language  with  C-like
+ *   [Limbo], a  new garbage-collected  concurrent language  with C-like
    syntax. It can  be considered a director successor to  Alef. The very
-   popular nowdays Go contains ideas found in Limbo.
+   popular nowadays Go contains ideas found in Limbo.
+
  * Dis, a virtual machine designed for portability and JIT.
+
  * Runs on hardware standalone  or hosted. Explainining, Inferno can run
    as a user application on top of an existing operating system.
 
@@ -319,11 +319,11 @@ brought no  financial gains  enough to  justify continued  investment in
 Bell Labs part. Today, and basically this article was written because of
 it, Bell Labs (now  owned by Nokia) [announced][plan9-announcement] that
 is transferring  copyright to  [Plan 9 Foundation][p9f]  incorporated by
-the Plan 9  creators allowing development to carry on.   Along with this
-latest Plan 9 codebase was relicensed under MIT.
+the Plan 9 creators allowing development  to carry on.  Along with this,
+all Plan 9 releases were relicensed under MIT.
 
 Concluding this section, it should be noted that Plan 9 is known for far
-more than its  distributed model, and post covering  those other aspects
+more than its distributed model,  and posts covering those other aspects
 should eventually follow.
 
 [ast-dos]: https://cds.cern.ch/record/400319/files/p101.pdf
@@ -334,10 +334,12 @@ should eventually follow.
 [amoeba-experiences]: https://www.cs.vu.nl/~ast/Publications/Papers/cacm-1990.pdf
 [amoeba-status]: https://www.cs.vu.nl/~ast/Publications/Papers/compcom-1991.pdf
 [amoeba-lecture]: https://cds.cern.ch/record/400320/files/p109.pdf
+[Orca]: https://research.vu.nl/en/publications/orca-a-language-for-parallel-programming-of-distributed-systems
 [FSD]: http://fsd-amoeba.sourceforge.net/start.html
 [fsd-sf]: https://sourceforge.net/projects/fsd-amoeba/files/
 [amoeba-python]: https://docs.python.org/3/faq/general.html#why-was-python-created-in-the-first-place
 [Sprite]: https://www2.eecs.berkeley.edu/Research/Projects/CS/sprite/sprite.html
+[sprite-paper]: https://www2.eecs.berkeley.edu/Pubs/TechRpts/1987/6229.html
 [sprite-retrospective]: https://www2.eecs.berkeley.edu/Research/Projects/CS/sprite/retrospective.html
 [sprite-updated]: https://web.stanford.edu/~ouster/cgi-bin/spriteRetrospective.php
 [sprite-fc]: https://www2.eecs.berkeley.edu/Pubs/TechRpts/1987/5993.html
@@ -354,6 +356,8 @@ should eventually follow.
 [gxemul-sprite]: http://gavare.se/gxemul/gxemul-stable/doc/guestoses.html#sprite
 [amoeba-vs-sprite]: https://research.vu.nl/en/publications/a-comparison-of-two-distributed-systems-amoeba-and-sprite
 [sprite-mach]: https://www.usenix.org/conference/usenix-mach-iii-symposium/sprite-mach
+[Mach]: /posts/gnu-hurd-the-kernel-that-was-not/#mach
+[pptcl-preface]: http://www.beedub.com/book/3rd/preface.pdf
 [plan9]: https://9p.io/plan9/
 [plan9-matters]: https://www.usenix.org/system/files/login/articles/546-mirtchovski.pdf
 [plan9-paper]: https://9p.io/sys/doc/9.html
