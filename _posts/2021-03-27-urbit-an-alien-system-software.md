@@ -426,9 +426,9 @@ An essential such app is `:chat-cli`  or just chat.  To enter chat press
 ~firstsyllable_lastsyllable:chat-cli/
 ```
 
-Thereafter just `>` will be used and  below will be the result.
-
 <!--
+Thereafter just `/` will be used and  below will be the result.
+
 There're [few  groups][thestack-groups] you can  join. In order  to join
 one run  the following  _simple_ command replacing  `~bitbet-bolbel` and
 `%urbit-community` with those you want to join.
@@ -457,8 +457,8 @@ Unfortunately  it  appears  comets  are not  allowed  to  join  channels
 anylonger.   Better go  back  to dojo  for now.   This  level isn't  yet
 available for your character.
 
-To go  back to dojo  enter `:dojo`  or simply with  ^X. You can  see all
-commands and available tools, alongside an one-line summary running
+To  go back  to  dojo simply  with  ^X.  You can  see  all commands  and
+available tools, alongside an one-line summary running
 
 ```
 > +help

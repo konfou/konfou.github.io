@@ -29,6 +29,7 @@ files.
 
  * Shareable  vs. unshareable  where shareable are  files stored  on one
    host and (can be) used on others.
+
  * Static vs. variable where static are those that do not change without
    administrator intervention.
 
@@ -118,7 +119,7 @@ abused.
 ## Virtual file systems
 
 The userspace or virtual file systems are filesystems not presented on a
-storage  medium  and show  the  strength  of the  _everything-is-a-file_
+storage  medium  and show  the  strength  of the  _everything is a file_
 abstraction found in  Unix systems.  I've noted virtual  file systems in
 root  hierarchy with  virtfs.  The  `/dev`,  using `devfs`,  is the  the
 location  of special  or  device files.   The  `/proc`, using  `procfs`,
@@ -270,9 +271,7 @@ The `~/var` has (paths relative to it)
 | ./backups | Old files; basically hoarding directory      |
 | ./tmp     | User persistent temporary files              |
 | ./trash   | Symlink to freedesktop Trash/files directory |
-| ./urbit   | Urbit piers ie ship (instances) states       |
-
->TODO: Make post on Urbit; history, concepts, usage, issues
+| ./urbit   | [Urbit] piers ie ship (instances) states     |
 
 And `~/srv` has (paths relative to it)
 
@@ -367,5 +366,6 @@ still all over the place since many programs do not adhere to XDG.
 [stalifs]: https://sta.li/filesystem/
 [xdgspec]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [archxdg]: https://wiki.archlinux.org/index.php/XDG_Base_Directory#Support
+[Urbit]: /posts/urbit-an-alien-system-software
 [dottools]: https://wiki.archlinux.org/index.php/Dotfiles#Tools
 [gobolinux]: /posts/gobolinix-redefining-filesystem-hierarchy

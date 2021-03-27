@@ -7,8 +7,6 @@ title: GNU Hurd, the kernel that was not
 >Some parts are to be added, expanded, and rewritten.
 >Also there're some pages and reports that I haven't read yet.
 
-## Introduction
-
 Back in early  80s, [GNU project started][gnu-initial] with  the goal to
 provide  a _free_  Unix-compatible software  system.  The  intent was  a
 system with everything needed to write and run C programs.  At the heart
@@ -210,7 +208,8 @@ are (by [Arne's post][draketo])
    provided by systemd  and depends on dbus, therefore can  only be used
    by dbus-aware programs.   In contrast translators can be  used by any
    program that has filesystem access.
- *  Jailed  privilege escalation,  similar  to  capabilities. This  also
+
+ *   Jailed privilege  escalation,  similar to  capabilities. This  also
    depends on dbus and specialized services.
 
 This shows  that features  can be implemented  through layers  of hacks.
