@@ -1,9 +1,6 @@
 ---
 layout: blog
 ---
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-<script type="text/x-mathjax-config" src="/assets/js/mathjax.conf.js"></script>
-
 <article itemscope itemtype="https://schema.org/BlogPosting" class="h-entry hentry">
   <h1 itemprop="headline" class="p-name entry-title">{{ page.title }}</h1>
   <p><time datetime="{{ page.date | date: '%Y-%m-%d' }}"
@@ -12,6 +9,17 @@ layout: blog
     {% include anchor_headings.html anchorBody="" beforeHeading=true html=content %}
   </div>
 </article>
+
+<!--
+<script src="https://utteranc.es/client.js"
+        repo="konfou/konfou.github.io"
+        issue-term="pathname"
+        label="comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+-->
 
 <footer>
   <p>
