@@ -109,9 +109,10 @@ directory respectively. A useful example  is mapping `/home` to `/Users`
 and `/root` to `/Users/root`.
 
 ```
-# mkdir /home
+# mkdir -p /Users/root
+# ln -s /Users /home
 # gobohide -h /home
-# mkdir /root
+# ln -s /Users/root /root
 # gobohide -h /root
 ```
 
@@ -185,7 +186,7 @@ Description
 ```
 
 Then  the program  can  be installed  with `Compile  file`  or for  that
-version specifically  with `Compile  file 5.34`.   Extra options  can be
+version specifically  with `Compile  file 5.39`.   Extra options  can be
 passed ad hoc  as flag in `Compile`  command.  This makes it  a bit like
 build tool-agnostic make. When the  package's files and directories have
 been created and populated, Compile will then create the necessary links
