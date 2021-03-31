@@ -38,7 +38,8 @@ Itself is  a collection  of tools  to glue  those other  components. The
 system's files  and processes are  organized into units  called _strata_
 which can  be thought as  selectively dented chroots. Then  _crossfs_, a
 FUSE-based   filesystem,  makes   resources  available   across  stratum
-boundaries.
+boundaries.   Finally  there  is  _etcfs_ which  redirects  `/etc`  file
+accesses as required by the calling process.
 
 Installation is  based on its meta  identity. That is you  cannot format
 and install  Bedrock. Rather an  installed distro is  converted in-place
@@ -141,10 +142,23 @@ root, copying the root to `/bedrock/strata/$name` preserving permissions
 and  symbolic links,  registering  with `brl  show  $name`, and  finally
 enabling with `brl enable $name`.
 
+Before the `/bedrock` directory got  introduced, it used the directories
+`/opt` for Bedrock files and `/var/chroot` to host the strata.  There're
+plans for the layout to change again in [the next version][blv08pl].
+
+Besides   the   flexibility   provides,  some   unique   features   also
+arise.  Distro-upgrades can  be done  live with  almost no  downtime and
+breaks from distro-upgrades aren't a problem.
+
 Closing  up,  general issues  are  complexity,  greater attack  surface,
 unsolvable  incompatibilities  (see   [page  on  v0.7][blv07fc]),  small
 community, duplicated  files resulting in  disk overhead, and  a runtime
-overhead resulting in a slight performance loss.
+overhead resulting in  a slight performance loss. Most  of the peromance
+loss originates from  existence of etcfs mount per  stratum, though this
+applies only in `/etc` operations.  But overall Bedrock appears good for
+day-to-day usage.
+
+It also worths checking the (old) [founder's AMA][reddit-ama] on Reddit.
 
 [Bedrock]: https://bedrocklinux.org/
 [frankdeb]: https://wiki.debian.org/DontBreakDebian#Don.27t_make_a_FrankenDebian
@@ -152,3 +166,6 @@ overhead resulting in a slight performance loss.
 [blv07bu]: https://bedrocklinux.org/0.7/basic-usage.html
 [blv07wp]: https://bedrocklinux.org/0.7/workflows.html#pinning
 [blv07fc]: https://bedrocklinux.org/0.7/feature-compatibility.html
+[blv08pl]: https://bedrocklinux.org/0.8/plans.html
+[lwn2012]: https://lwn.net/Articles/515709/
+[reddit-ama]: https://www.reddit.com/r/linux/comments/a724qe/
