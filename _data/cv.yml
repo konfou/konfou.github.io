@@ -8,15 +8,22 @@ city: Thessaloniki
 country: Greece
 summary:
  text:
-   Currently, master student in computational physics.
+    Currently, master student in computational physics.
 
 interests:
  - nonlinear dynamics
  - complex systems
  - celestial mechanics
- - relativity
- - applied mathematics
+ - general relativity
+
+knowledge:
+ - computational physics
+ - computational mathematics
+ - astrodynamics
+ - scientific computing
+ - dynamical systems
  - data analysis
+ - system administration
 
 skills:
  - name: Programming
@@ -56,9 +63,56 @@ education:
     start: 2019
     end: present
     degree: MS, Computational Physics
+    summary:
+      Courses in scientific computing and applications.
   - name: Aristotle University
     city: Thessaloniki
     url: users.auth.gr/kfoutzop
     start: 2014
     end: 2019
     degree: BS, Physics
+    summary:
+      Courses in computational physics, mechanics and astronomy.
+ certs:
+  - name: IT Support
+    date: Sep 19
+    summary:
+      A professional certificate by Google on Coursera.
+  - name: Data Science
+    date: Sep 19
+      A professional certificate by IBM on Coursera.
+  - name: Wolfram Technology Certified Level I
+    date: Oct 20
+      Proficiency in a range of computational tasks using the Wolfram language.
+
+projects:
+ - name: Modeling swarm behavior with boids
+   url: users.auth.gr/kfoutzop/pms/sem3.cbp/boids/
+   summary:
+     For the course Computational Biophysics.
+     Theory and computational implementation. (In Greek.)
+ - name: FDTD simulation of parabolic reflector antenna
+   url: users.auth.gr/kfoutzop/pms/sem2.cem/
+   summary:
+     For the course Computational Electromagnetism & Applications.
+     Utilized fdtd2D.m written by S. C. Hagness.
+ - name: From linear to non-linear system
+   url: users.auth.gr/kfoutzop/pms/sem2.nld/foutzopoulos2020_fltnl.pdf
+   summary:
+     For the course Nonlinear Dynamics.
+     Theory and numerical integration for some systems. (In Greek.)
+ - name: Quantum Zeno effect
+   url: users.auth.gr/kfoutzop/pms/sem2.qip/foutzopoulos2020_qze.pdf
+   summary:
+     For the course Quantum Information and Processing.
+     Theory and simulation with IBM Qiskit. (In Greek.)
+ - name: Mean-motion resonances in exoplanetary systems
+   url: users.auth.gr/~voyatzis/SeniorThesis/pFoutzopoulos.pdf
+   summary:
+     Senior thesis, supervised by George Voyatzis.
+     Data analysis and orbit numerical integration.
+ - name: Venue data analysis of Thessaloniki
+   url: github.com/konfou/coursera-ibm-data-cert/blob/master/venue-data-analysis-of-thessaloniki.ipynb
+   summary:
+     IBM data science certification capstone.
+     Data classification and clustering.
