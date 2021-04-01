@@ -11,7 +11,7 @@ layout: cv
     <strong>Email:</strong> <a class="u-email email" href="mailto:{{ site.data.cv.email }}">{{ site.data.cv.email }}</a> |
     <strong>Github:</strong>  <a href="https://github.com/{{ site.data.cv.gh }}">@{{ site.data.cv.gh }}</a> |
     <strong>LinkedIn:</strong>  <a href="https://www.linkedin.com/in/{{ site.data.cv.li }}/">@{{ site.data.cv.li }}</a><br>
-    <strong>Affiliation:</strong> <span class="p-org org"> {{ site.data.cv.org }}</span>,
+    <strong>Affiliation:</strong> <span class="p-org org">{{ site.data.cv.org }}</span>,
     <span class="p-locality locality">{{ site.data.cv.city }}</span>,
     <span class="p-country-name country-name">{{ site.data.cv.country }}</span><br>
   </div><br>
@@ -21,14 +21,14 @@ layout: cv
   <hr/>
 
   <h2>Research interests</h2>
-  <p>(in general terms)</p>
+  <p class="text-muted">in general terms</p>
   {% for interest in site.data.cv.interests %}
     <span class="label label-default">{{ interest }}</span>
   {% endfor %}
   <hr/>
 
   <h2>Knowledge</h2>
-  <p>(in general terms)</p>
+  <p class="text-muted">in general terms</p>
   {% for item in site.data.cv.knowledge %}
     <span class="label label-default">{{ item }}</span>
   {% endfor %}
@@ -45,15 +45,14 @@ layout: cv
   <h2 class="p-education education">Education</h2>
   {% for college in site.data.cv.education.colleges %}  <div class="h-event vevent">
     <h3>
-      <strong>
-        <a class="u-url url" href="//{{ college.url }}">
-        <span class="p-name summary">{{ college.name }}</span>,
-        <span class="p-location location">{{ college.city }}</span>
-      </a></strong>
+      <strong class="p-summary summary">{{ college.degree }}</strong>
     </h3>
     <h4>
-      <strong class="p-summary">{{ college.degree }}</strong>,
-      <abbr class="dt-start dtstart">{{ college.start }}</abbr>-<abbr class="dt-end dtend">{{college.end}}</abbr>
+      <strong><a class="u-url url" href="//{{ college.url }}">
+        <span class="p-org org comma">{{ college.org }}</span>
+      </a></strong>
+      <span class="p-location location comma">{{ college.city }}</span>
+      <abbr class="dt-start dtstart">{{ college.start }}</abbr>&mdash;<abbr class="dt-end dtend">{{college.end}}</abbr>
     </h4>
     <p>{{ college.summary }}</p>
     </div>
@@ -61,15 +60,34 @@ layout: cv
   <hr/>
 
   <h2>Projects and semester papers</h2>
+  <p class="bg-info">Contact me if you see something interesting and need a translation.</p>
   {% for project in site.data.cv.projects %}  <div class="h-event vevent">
     <h4>
       <strong>
         {% if project.url %} <a class="u-url url" href="//{{ project.url }}">{% endif %}
-        <span class="p-name summary">{{ project.name }}</span>
+        <span class="p-name">{{ project.name }}</span>
       {% if project.url %}</a>{% endif %}</strong>
     </h4>
-    <span class="p-summary">{{ project.summary }}</span>
+    <span class="p-summary summary">{{ project.summary }}</span>
   {% endfor %}
+  <hr/>
+
+  <h2>Teaching</h2>
+    <h3>Undergraduate teaching assistant</h3>
+    <p>Graded homework assignments and provided feedback to students in two of the aced courses.</p>
+    {% for course in site.data.cv.teaching %}  <div class="h-event vevent">
+      <h4>
+        <strong class="p-summary summary">{{ course.name }}</strong>
+      </h4>
+      <h5>
+        <strong>
+          <span class="p-org org comma">{{ course.org }}</span>
+        </strong>
+        <span class="p-location location comma">{{ course.city }}</span>
+        <abbr class="dt-start dtstart">{{ course.start }}</abbr>&mdash;<abbr class="dt-end dtend">{{course.end}}</abbr>
+      </h5>
+      </div>
+    {% endfor %}
   <hr/>
 
 </div>

@@ -57,20 +57,20 @@ skills:
 
 education:
  colleges:
-  - name: Aristotle University
+  - degree: MS, Computational Physics
+    org: Aristotle University
     city: Thessaloniki
-    url: users.auth.gr/kfoutzop
+    url: pms.physics.auth.gr/comphys/?lang=en
     start: 2019
     end: present
-    degree: MS, Computational Physics
     summary:
       Courses in scientific computing and applications.
-  - name: Aristotle University
+  - degree: BS, Physics
+    org: Aristotle University
     city: Thessaloniki
-    url: users.auth.gr/kfoutzop
+    url: www.physics.auth.gr/en
     start: 2014
     end: 2019
-    degree: BS, Physics
     summary:
       Courses in computational physics, mechanics and astronomy.
  certs:
@@ -106,6 +106,11 @@ projects:
    summary:
      For the course Quantum Information and Processing.
      Theory and simulation with IBM Qiskit. (In Greek.)
+ - name: Dirac comb for repulsive and attractive potential
+   url: users.auth.gr/kfoutzop/pms/sem2.cqm/foutzop2019_ dirac_comb_analytical.pdf
+   summary:
+     For the course Computational Quantum Mechanics.
+     Theoretical part from a week's homework. (In Greek.)
  - name: Mean-motion resonances in exoplanetary systems
    url: users.auth.gr/~voyatzis/SeniorThesis/pFoutzopoulos.pdf
    summary:
@@ -116,3 +121,15 @@ projects:
    summary:
      IBM data science certification capstone.
      Data classification and clustering.
+
+teaching:
+  - name: Electricity and Magnetism
+    org: Aristotle University
+    city: Thessaloniki
+    start: Feb 2016
+    end: Jun 2016
+  - name: Numerical Analysis
+    org: Aristotle University
+    city: Thessaloniki
+    start: Feb 2018
+    end: Jun 2018
