@@ -21,13 +21,13 @@ fans.
 ## Extra deck
 
 The _extra deck_  contains monsters that can be special  summoned in the
-_extra monster  zone_.  The  extra monster  zone is  shared for  the two
-duelists but  normally only one  of the two  positions can be  used from
-each  one.  It replaced  the  _fusion  deck_  when synchro  monster  got
-introduced.  Before  then fusion  and  ritual  monsters where  the  only
-monsters that could be special  summoned.  For reminder, fusion monsters
-require  specific  monsters, called  _fusion  materials_,  and a  fusion
-summoning  card  such   as,  the  known  from  the   anime,  {%  include
+_main monster zone_ and _extra monster zone_.  The extra monster zone is
+shared for the  two duelists but normally only one  of the two positions
+can be used  from each one.  It replaced the  _fusion deck_ when synchro
+monster got  introduced.  Before then  fusion and ritual  monsters where
+the only monsters that could  be special summoned.  For reminder, fusion
+monsters  require specific  monsters, called  _fusion materials_,  and a
+fusion summoning  card such  as, the  known from  the anime,  {% include
 ygocard.html  search='Polymerization' %}.   Ritual monsters  are special
 summoned with a  specific ritual summoning card.  In  contrast to fusion
 and all other special summoned monsters, ritual monster cards are placed
@@ -80,8 +80,8 @@ Many  considered them  broken  due  to their  ease  of summoning.   They
 require no specific  monsters, no extra spell card, no  tuners, and even
 those having requirements are pretty  generic.  As such they've become a
 must  in competitive  setting (meta  decks) yet  no skill  or effort  or
-strategy was needed  for their use.  For disqussions on  that aspect see
-https://redd.it/2gn4vt and https://redd.it/5f6qhw (threads on r/yugioh).
+strategy  was needed  for  their use.  See <https://redd.it/2gn4vt>  and
+<https://redd.it/5f6qhw> (threads on r/yugioh) for relevant discussions.
 
 ## Pendulum
 
@@ -96,7 +96,9 @@ leftmost and (one in the) rightmost  spell & trap zone.  These positions
 become the pendulum zone.  After  having one in each, pendulum summoning
 can take  place.  Then  any number  of monsters  from hand  and pendulum
 monsters from extra deck with level between (exclusive) the two pendulum
-ratings, called the _pendulum scale_, can be special summoned.
+ratings, called the  _pendulum scale_, can be  special summoned. Monster
+special summoned from the extra deck  have to be placed to extra monster
+zone.
 
 Pendulum monsters cannot be completely  destroyed.  Whenever one is sent
 from the field  to the graveyard, it's placed face-up  in the extra deck
@@ -126,14 +128,16 @@ rating and can never be in defense position. Taking control of one moves
 it to the  main monster zone and when  it goes back this is  the zone it
 goes to.
 
-Link Monsters  can be used to  increase the number of  monsters summoned
-from the  extra deck.  Monsters summoned  from the extra deck  go in the
-extra monster zone  but every monster in the main  monster zone that has
-link pointed  to it,  can be  used to summon  monsters from  extra deck.
-Before their introduction, monsters special summoned from the extra deck
-were placed  in the main  monster zone and  were unrestricted. On  a way
-their introduction nerfs Synchro, Xyz, and Pendulum summoning. They also
-introduce the need for strategic planning of where cards will be placed.
+Link Monsters have to  placed to the extra monster zone  but they can be
+used to  increase that number.   Every main  monster zone that  has link
+pointed to it can function as an extra monster zone.
+
+For few years  after their introduction, every  monster special summoned
+from the extra deck  had to be summoned to an extra main  zone. On a way
+their  introduction nerfed  Synchro, Xyz,  and Pendulum  summoning. They
+also introduced the  need for strategic planning of where  cards will be
+placed. The decision  was nevertheless reverted last year  for all extra
+decks summonings besides Pendulum and Link.
 
 Their  summoning  makes   it  simpler  to  summon   link  monsters  with
 increasingly  higher link  rating.  Normally  one monster  is one  _link
