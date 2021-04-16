@@ -16,7 +16,7 @@
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} posts" href="/feed.xml" />
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <link rel="icon" href="{{ site.logo }}">
-  <link rel="license" href="//creativecommons.org/licenses/by/4.0/">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
   <link rel="stylesheet" type="text/css" href="/assets/css/site.css">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="openid.delegate" href="{{ site.url }}">
@@ -24,7 +24,7 @@
   <link rel="authorization_endpoint" href="https://indieauth.com/auth">
   <link rel="me" href="https://twitter.com/konfou">
   <link rel="pgpkey" type="text/plain" href="{{ site.url }}/pgp.asc">
-  <!--
+{% if page.layout == 'post' %}<!--
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
@@ -32,8 +32,8 @@
   -->
   <script src="/assets/js/mathjax-config.js" defer></script>
   <script type="text/javascript" id="MathJax-script" defer
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js">
-  </script>
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"></script>
+{% endif %}
 </head>
 <body>
 {{ content }}
