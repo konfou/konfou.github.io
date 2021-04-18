@@ -96,7 +96,8 @@ various places[^b].
 >[A] clean-slate OS and network for the 21st century
 ([source][Urbit])
 
-Combining, [per the documentation][docs-so]
+In  simpler terms,  which  can  be said  to  a  combination of  previous
+descriptions, [per the documentation][docs-so]
 
 >Urbit  is  a  clean-slate  software  stack  designed  to  implement  an
 >encrypted P2P network of general-purpose personal servers.
@@ -159,7 +160,7 @@ problem.   Scarcity  is used  alongside  reputation  to fight  malicious
 actors.  There's  an hierarchy named after  astronomy terms[^f] (galaxy,
 star,  planet), called  points.   In addition  to  them, there're  Urbit
 identities  not registered  on Azimunth,  moons and  comets.  Moons  are
-meant for devices owned by a  planet owner, and comment's are disposable
+meant for  devices owned by  a planet  owner, and comets  are disposable
 identities.  Compared  to existing  (common) layers (IPs,  domain names,
 user identities), it combines them all into one.
 
@@ -579,6 +580,8 @@ rather evolved[^i].
 [pmonk-explains]: https://twitter.com/pcmonk/status/1201298411011629063
 [loper-decaying]: http://www.loper-os.org/?p=1390
 [jefferson-urbit]: https://jeffersonwhite.com/destroying-progressivism/urbit-creating-a-new-internet/
+[krupp-urbit]: https://alexkrupp.typepad.com/sensemaking/2013/12/a-brief-introduction-to-urbit.html
+[urbit-martian-computing]: https://web.archive.org/web/20140424223249/http://urbit.org/community/articles/martian-computing/
 <!-- Forums -->
 [hn20130924]: https://news.ycombinator.com/item?id=6438320
 [hn20141008]: https://news.ycombinator.com/item?id=8578151

@@ -3,7 +3,7 @@ layout: post
 title: Yu-Gi-Oh! card game for classic anime viewers
 ---
 
-By Mid 2000s  Yu-Gi-Oh!  had become huge  in the west in  part thanks to
+By mid 2000s  Yu-Gi-Oh!  had become huge  in the west in  part thanks to
 the [Yu-Gi-Oh!][yp-anime],  in Japan known as  Yu-Gi-Oh!  Duel Monsters,
 anime dubbed  by 4Kids.  Lots  of kids  grew up watching  it, collecting
 cards, and  playing the  card game.  Though  new Yu-Gi-Oh!   anime shows
@@ -275,10 +275,10 @@ rules][trinity-rules].
    3 times each  turn. This doesn't refer to the  number of monsters but
    the act of summoning.
 
- *  By  default  there  can  be  only one  copy  of  each  card  in  the
+ *   By  default  there can  be  only  one  copy  of each  card  in  the
    decks. Unbound  cards are excepted to  3 copies. Those are  normal or
    non-effect monsters, cards that  reference themselves, and cards that
-   cards that share a name.
+   share a name.
 
  * The minimum main deck size is reduced to 30. The upper limit remains.
 

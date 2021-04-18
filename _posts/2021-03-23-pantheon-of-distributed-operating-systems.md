@@ -99,7 +99,7 @@ exceptions inspired from Modula-3.
 [Sprite]  was  developed  at  the   University  of  California  by  John
 Ousterhout's research  group between 1984  (initial work; 1987  was used
 for day-to-day  computing) and  1992. It was  Unix-like but  was written
-from scratch. It  was used as testedbed for research  in various topics,
+from scratch.  It was used  as testbed  for research in  various topics,
 among them network, log-structured, and striped filesystems.
 
 [At  the   time][sprite-retrospective]  ([updated][sprite-updated])  the
@@ -178,7 +178,7 @@ following differences.
 
 Microkernel  approaches for  Sprite  were  also explored.   Specifically
 [Sprite  kernel was  ported][sprite-mach]  to run  as user-level  server
-process on  [Mach] microkernel, which  was developed at  Carnagie Mellon
+process on  [Mach microkernel], which  was developed at  Carnagie Mellon
 University between 1985 and 1994. The Sprite server was smaller than the
 original kernel and it contained almost  no machine specific code.  As a
 downside it was  benchmarked at about 1/3 of the  native perfomance.  An
@@ -243,13 +243,13 @@ single   workstation.   This   model  of   per-process  namespaces   and
 filesystem-like resources is then extended throughout the system.
 
 An  example where  this  is applied,  is  rio (and  8½  before it),  its
-windowing system,  that is  implemented as a  file server.   Each window
-window is created  in a separate namespace. Thanks to  its 9P interface,
-rio  is network  transparent  even without  including any  network-aware
-code.  This is  in contrast to X server that  specifically includes such
-code.  Also in  contrast to X server, a remote  rio application sees its
-files in the  usual location and therefore doesn't know  whether it runs
-locally or remotely.
+windowing system, that is implemented as  a file server.  Each window is
+created in  a separate  namespace. Thanks  to its  9P interface,  rio is
+network transparent even without including any network-aware code.  This
+is in contrast  to X server that specifically includes  such code.  Also
+in contrast to X server, a remote  rio application sees its files in the
+usual location  and therefore  doesn't know whether  it runs  locally or
+remotely.
 
 It  should be  noted that  X  used in  previous systems  bears an  extra
 complexity  not  required  as, even  without  its  network-capabilities,
@@ -328,6 +328,7 @@ should eventually follow.
 
 [ast-dos]: https://cds.cern.ch/record/400319/files/p101.pdf
 [ast-rvr-dos]: https://research.vu.nl/en/publications/distributed-operating-systems
+<!-- Amoeba resources -->
 [Amoeba]: https://www.cs.vu.nl/pub/amoeba/
 [amoeba-intro]: https://www.cs.vu.nl/pub/amoeba/Intro.pdf
 [amoeba-90s]: https://www.cs.vu.nl/~ast/Publications/Papers/computer-1990.pdf
@@ -338,6 +339,7 @@ should eventually follow.
 [FSD]: http://fsd-amoeba.sourceforge.net/start.html
 [fsd-sf]: https://sourceforge.net/projects/fsd-amoeba/files/
 [amoeba-python]: https://docs.python.org/3/faq/general.html#why-was-python-created-in-the-first-place
+<!-- Sprite resources -->
 [Sprite]: https://www2.eecs.berkeley.edu/Research/Projects/CS/sprite/sprite.html
 [sprite-paper]: https://www2.eecs.berkeley.edu/Pubs/TechRpts/1987/6229.html
 [sprite-retrospective]: https://www2.eecs.berkeley.edu/Research/Projects/CS/sprite/retrospective.html
@@ -358,6 +360,7 @@ should eventually follow.
 [sprite-mach]: https://www.usenix.org/conference/usenix-mach-iii-symposium/sprite-mach
 [Mach]: /posts/gnu-hurd-the-kernel-that-was-not/#mach
 [pptcl-preface]: http://www.beedub.com/book/3rd/preface.pdf
+<!-- Plan 9 resources -->
 [plan9]: https://9p.io/plan9/
 [plan9-matters]: https://www.usenix.org/system/files/login/articles/546-mirtchovski.pdf
 [plan9-paper]: https://9p.io/sys/doc/9.html
@@ -370,6 +373,9 @@ should eventually follow.
 [planb]: https://web.archive.org/web/20201105205650/https://lsub.org/ls/planb.html
 [Inferno]: http://www.vitanuova.com/inferno/
 [inferno-paper]: http://www.vitanuova.com/inferno/papers/bltj.html
+[mjl-inferno]: https://www.ueber.net/who/mjl/inferno/
 [Limbo]: http://www.vitanuova.com/inferno/papers/descent.html
 [plan9-announcement]: https://www.bell-labs.com/institute/blog/plan-9-bell-labs-cyberspace/
 [p9f]: https://p9f.org/
+<!-- To check at another time -->
+[malte2013]: http://cs.brown.edu/~malte/pub/papers/2013-apsys-dios.pdf

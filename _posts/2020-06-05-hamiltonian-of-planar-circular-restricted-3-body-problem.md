@@ -10,10 +10,10 @@ Translation of [homework done][hw] for the course Computational Astrodynamics.[^
 
 [^f]: Post date reflects original date; translation done 06/04/2021.
 
-The coordinates of inertial and rotating rotating reference frame are connected
+The coordinates of inertial and rotating reference frame are connected
 
 $$
-  (\xi, \eta) = R(t)(t) (x, y) = x(\cos t, \sin t) + y(-\sin t, \cos t)
+  (\xi, \eta) = R(t) (x, y) = x(\cos t, \sin t) + y(-\sin t, \cos t)
 $$
 
 $$
@@ -77,7 +77,7 @@ $$
   r_2^2 = (x - (1 - \mu))^2 + y^2
 $$
 
-The gravitional potential is written
+The gravitational potential is written
 
 $$
   V = -\frac{1 - \mu}{r_1} - \frac{\mu}{r_2}
@@ -89,7 +89,7 @@ $$
   L = \frac{1}{2}(\dot{\xi}^2 + \dot{\eta}^2) - V
 $$
 
-Utilizing the convertion relationships, it is written
+Utilizing the conversion relationships, it is written
 
 $$
   L = \frac{1}{2}((\dot{x} - y)^2 + (\dot{y} + x)^2) - V

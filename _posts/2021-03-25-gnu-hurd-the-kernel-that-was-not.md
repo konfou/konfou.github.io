@@ -309,6 +309,8 @@ operating system.
 [L4Re]: https://l4re.org/
 
 <!-- To check at another time -->
+[self-hfs]: /posts/gnu-hurd-from-scratch
+[hurd-rpc]: https://www.gnu.org/software/hurd/hurd/rpc.html
 [additional-goals-1]: https://lists.defectivebydesign.org/archive/html/l4-hurd/2005-10/msg00651.html
 [additional-goals-2]: https://lists.defectivebydesign.org/archive/html/l4-hurd/2005-10/msg00654.html
 [lwn-signs]: https://lwn.net/Articles/452296/
@@ -325,7 +327,13 @@ operating system.
 [sthibault2019]: https://archive.fosdem.org/2019/schedule/event/roadmap_for_the_hurd/
 [hurd-microkernel]: https://www.gnu.org/software/hurd/faq/which_microkernel.html
 [hurd-mk-porting]: https://www.gnu.org/software/hurd/history/port_to_another_microkernel.html
+[hurd-slow]: https://600800.xyz/software/hurd/faq/slow.html
 [hammar-thesis]: http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.183.2532
 [debian]: https://wiki.debian.org/Debian_GNU/Hurd
 [debian-install]: https://www.debian.org/ports/hurd/hurd-install
+[debian-servers]: https://www.debian.org/ports/hurd/hurd-doc-server
+[debian-trans]: https://www.debian.org/ports/hurd/hurd-doc-translator
 [deficiencies]: https://www.gnu.org/software/hurd/microkernel/mach/deficiencies.html
+[minix-herder]: http://www.minix3.org/theses/herder-true-microkernel.pdf
+[vr-hurd]: https://blog.darknedgy.net/technology/2015/07/25/0/
+[hn20190707]: https://news.ycombinator.com/item?id=20374239

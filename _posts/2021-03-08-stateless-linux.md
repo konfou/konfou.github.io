@@ -88,14 +88,14 @@ software deployment by eliminating problems arising due to system state.
 The Nix system is made of  a functional language, a package manager, and
 a build manager.
 
-[NixOS]  is a  distribution based  on  Nix.  Its  configuration is  done
-centrally and represents  a Nix recipe. When a rebuild  of the system is
-requested the  expressions within that  recipe are evaluated, and  a new
-"image", called  derivation, gets  build marking  a new  generation. The
-system can  then switch  to this new  image. Specifically,  the packages
-required  and their  assets are  installed  in a  read-only store  under
-`/nix`  and  some  directories  are populated  with  symlinks  to  files
-resulting from the evaluation.
+[NixOS] (see [paper][nixos-paper]) is a  distribution based on Nix.  Its
+configuration  is done  centrally and  represents a  Nix recipe.  When a
+rebuild of  the system is  requested the expressions within  that recipe
+are evaluated, and a new  "image", called derivation, gets build marking
+a   new  generation.   The  system   can   then  switch   to  this   new
+image.  Specifically,  the  packages   required  and  their  assets  are
+installed in  a read-only  store under `/nix`  and some  directories are
+populated with symlinks to files resulting from the evaluation.
 
 On  boot it  is  made sure  that the  filesystem  matches the  specified
 setup. Basically the  only directories actually required  are `/nix` and
@@ -137,6 +137,7 @@ distribution akin to NixOS.
 [Nix]: https://nixos.org/guides/how-nix-works.html
 [dolstra2006]: https://edolstra.github.io/pubs/phd-thesis.pdf
 [NixOS]: https://nixos.org/
+[nixos-paper]: https://edolstra.github.io/pubs/nixos-jfp-final.pdf
 [cuth2015]: http://gfxmonk.net/2015/01/03/nixos-and-stateless-deployment.html
 [graham2020]: https://grahamc.com/blog/erase-your-darlings
 [Darch]: https://godarch.com/
