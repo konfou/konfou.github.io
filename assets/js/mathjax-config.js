@@ -1,9 +1,10 @@
-MathJax = {
+ MathJax = {
   loader: {
-    load: ['input/tex', 'output/chtml']
+    load: ['input/tex', 'output/chtml', '[tex]/physics']
   },
   tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    packages: {'[+]': ['physics']}
   },
   processEscapes: true
 };
