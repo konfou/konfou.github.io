@@ -11,6 +11,12 @@ email: mail@konfou.xyz
 # build config
 include: ["_pages"]
 markdown: kramdown
+defaults:
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: "post"
 kramdown:
   input: GFM
   auto_ids: true

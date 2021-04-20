@@ -1,5 +1,4 @@
 ---
-layout: post
 title: sixel for terminal graphics
 ---
 "Six-pixel" or "[sixel]" for short is a graphics format originating from

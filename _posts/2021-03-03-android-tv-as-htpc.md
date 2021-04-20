@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Android TV as HTPC
 ---
 The  dumb TVs  have  slowly given  up their  place  to so-called  [smart

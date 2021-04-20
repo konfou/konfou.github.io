@@ -1,5 +1,4 @@
 ---
-layout: post
 title: GUI programs on WSL
 ---
 [Windows Subsystem for Linux][wsl-about] or  WSL is the successor to the

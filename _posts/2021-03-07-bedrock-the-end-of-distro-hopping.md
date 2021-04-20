@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Bedrock, the end of distro-hopping
 ---
 During the initiation of a new  user in the Linux world someone installs

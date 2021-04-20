@@ -1,5 +1,4 @@
 ---
-layout: post
 title: NixOS without display manager
 ---
 A display manager or login manager is a graphical interface shown at the

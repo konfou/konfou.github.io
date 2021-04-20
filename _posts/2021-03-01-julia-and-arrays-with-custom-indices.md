@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Julia and arrays with custom indices
 ---
 [Julia] is a  modern language designed for technical  computing.  In the

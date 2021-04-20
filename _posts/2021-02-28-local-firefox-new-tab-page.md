@@ -1,5 +1,4 @@
 ---
-layout: post
 title: local Firefox New Tab page
 ---
 A long time ago, that is six years ago (pre-v41), it used to be possible

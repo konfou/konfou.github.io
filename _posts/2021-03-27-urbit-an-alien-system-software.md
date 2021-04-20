@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Urbit, an alien system software
 ---
 

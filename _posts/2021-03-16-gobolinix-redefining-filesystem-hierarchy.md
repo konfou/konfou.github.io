@@ -1,5 +1,4 @@
 ---
-layout: post
 title: GoboLinux redefining filesystem hierarchy
 ---
 

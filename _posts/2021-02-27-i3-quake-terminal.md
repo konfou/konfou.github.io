@@ -1,5 +1,4 @@
 ---
-layout: post
 title: i3 quake terminal
 ---
 Whoever  has played  enough videogames  may have  seen that  few have  a

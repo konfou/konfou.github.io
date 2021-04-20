@@ -1,5 +1,4 @@
 ---
-layout: post
 title: pantheon of distributed operating systems
 ---
 

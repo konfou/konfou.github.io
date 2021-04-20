@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Yu-Gi-Oh! card game for classic anime viewers
 ---
 

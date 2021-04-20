@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Hamiltonian of planar circular restricted 3-body problem
 ---
 ...in rotating coordinates

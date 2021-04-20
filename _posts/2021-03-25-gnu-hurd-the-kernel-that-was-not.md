@@ -1,5 +1,4 @@
 ---
-layout: post
 title: GNU Hurd, the kernel that was not
 ---
 
