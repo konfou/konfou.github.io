@@ -15,24 +15,24 @@ layout: cv
     <span class="p-locality locality">{{ site.data.cv.city }}</span>,
     <span class="p-country-name country-name">{{ site.data.cv.country }}</span><br>
   </div><br>
-  <div id="objective" class="p-summary summary">
+  <div id="objective" class="p-summary summary p-note note">
     <p> {{ site.data.cv.summary.text }}</p>
   </div>
-  <hr/>
+  <hr>
 
   <h2>Research interests</h2>
   <p class="text-muted">in general terms</p>
   {% for interest in site.data.cv.interests %}
     <span class="label label-default">{{ interest }}</span>
   {% endfor %}
-  <hr/>
+  <hr>
 
   <h2>Knowledge</h2>
   <p class="text-muted">in general terms</p>
   {% for item in site.data.cv.knowledge %}
     <span class="label label-default">{{ item }}</span>
   {% endfor %}
-  <hr/>
+  <hr>
 
   <h2>Skills</h2>
   {% for skill in site.data.cv.skills %}
@@ -40,7 +40,7 @@ layout: cv
   {% for item in skill.items %}
       <span class="label label-default p-skill skill">{{ item.name }}</span>
   {% endfor %}{% endfor %}
-  <hr/>
+  <hr>
 
   <h2 class="p-education education">Education</h2>
   {% for college in site.data.cv.education.colleges %}  <div class="h-event vevent">
@@ -48,16 +48,14 @@ layout: cv
       <strong class="p-summary summary">{{ college.degree }}</strong>
     </h3>
     <h4>
-      <strong><a class="u-url url" href="//{{ college.url }}">
-        <span class="p-org org comma">{{ college.org }}</span>
-      </a></strong>
-      <span class="p-location location comma">{{ college.city }}</span>
-      <abbr class="dt-start dtstart">{{ college.start }}</abbr>&mdash;<abbr class="dt-end dtend">{{college.end}}</abbr>
+      <span class="p-org org">{{college.org}}</span>,
+      <span class="p-location location">{{ college.city }}</span>,
+      <abbr class="dt-start dtstart">{{ college.start }}</abbr>&mdash;<abbr class="dt-end dtend">{{college.end }}</abbr>
     </h4>
     <p>{{ college.summary }}</p>
     </div>
   {% endfor %}
-  <hr/>
+  <hr>
 
   <h2>Projects and semester papers</h2>
   <p class="bg-info">Contact me if you see something interesting and need a translation.</p>
@@ -70,24 +68,32 @@ layout: cv
     </h4>
     <span class="p-summary summary">{{ project.summary }}</span>
   {% endfor %}
-  <hr/>
+  <hr>
 
   <h2>Teaching</h2>
-    <h3>Undergraduate teaching assistant</h3>
-    <p>Graded homework assignments and provided feedback to students in two of the aced courses.</p>
+    <h3 class="p-experience experience">Undergraduate teaching assistant</h3>
+    <p class="p-summary summary">Graded homework assignments and provided feedback to students in two of the aced courses.</p>
     {% for course in site.data.cv.teaching %}  <div class="h-event vevent">
       <h4>
         <strong class="p-summary summary">{{ course.name }}</strong>
       </h4>
       <h5>
-        <strong>
-          <span class="p-org org comma">{{ course.org }}</span>
-        </strong>
-        <span class="p-location location comma">{{ course.city }}</span>
-        <abbr class="dt-start dtstart">{{ course.start }}</abbr>&mdash;<abbr class="dt-end dtend">{{course.end}}</abbr>
+        <span class="p-org org">{{ course.org }}</span>,
+        <span class="p-location location">{{ course.city }}</span>,
+        <abbr class="dt-start dtstart">{{ course.start }}</abbr>&mdash;<abbr class="dt-end dtend">{{course.end }}</abbr>
       </h5>
       </div>
     {% endfor %}
-  <hr/>
+  <hr>
+
+  <h2>Misc</h2>
+  {% for each in site.data.cv.misc %}  <div class="h-event vevent">
+    <h4>
+      <strong><span class="p-name">{{ each.name }}</span></strong>
+    </h4>
+    <abbr class="dt-start dtstart">{{ each.start }}</abbr>&mdash;<abbr class="dt-end dtend">{{ each.end }}</abbr><br>
+    <span class="p-summary summary">{{ each.summary }}</span>
+  {% endfor %}
+  <hr>
 
 </div>

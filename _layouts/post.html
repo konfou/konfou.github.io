@@ -3,9 +3,10 @@ layout: blog
 ---
 <article itemscope itemtype="https://schema.org/BlogPosting" class="h-entry hentry">
   <h1 itemprop="headline" class="p-name entry-title">{{ page.title }}</h1>
-  <p><time datetime="{{ page.date | date: '%Y-%m-%d' }}"
+  <p><span class="p-author author">{{ site.author }}</span>
+     <time datetime="{{ page.date | date: '%Y-%m-%d' }}"
            itemprop="datePublished" class="dt-published published">{{ page.date | date: "%-d %B %Y" }}</time></p>
-  <div itemprop="articleBody" class="e-content">
+  <div itemprop="articleBody" class="e-content entry-content">
     {% include anchor_headings.html anchorBody="" beforeHeading=true html=content %}
   </div>
 </article>

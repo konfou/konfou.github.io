@@ -8,7 +8,7 @@ layout: blog
   <h1>Posts</h1>
 {% for post in site.posts %}
     <p class="flex-justify h-entry hentry">
-      <a href="{{ post.url }}" class="p-name entry-title u-url">{{ post.title }}</a>
+      <a href="{{ post.url }}" class="p-name entry-title u-url url">{{ post.title }}</a>
       <time class="dt-published published" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d/%m/%Y" }}</time>
     </p>
 {% endfor %}

@@ -74,16 +74,16 @@ education:
     summary:
       Courses in computational physics, mechanics and astronomy.
  certs:
+  - name: Wolfram Technology Certified Level I
+    date: Oct 20
+      Proficiency in a range of computational tasks using the Wolfram language.
+  - name: Data Science
+    date: Sep 19
+      A professional certificate by IBM on Coursera.
   - name: IT Support
     date: Sep 19
     summary:
       A professional certificate by Google on Coursera.
-  - name: Data Science
-    date: Sep 19
-      A professional certificate by IBM on Coursera.
-  - name: Wolfram Technology Certified Level I
-    date: Oct 20
-      Proficiency in a range of computational tasks using the Wolfram language.
 
 projects:
  - name: Modeling swarm behavior with boids
@@ -133,3 +133,10 @@ teaching:
     city: Thessaloniki
     start: Feb 2018
     end: Jun 2018
+
+misc:
+  - name: Mandatory military service
+    start: Nov 2018
+    end: Aug 2019
+    summary:
+      Private at Hellenic Army Aviation.

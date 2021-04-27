@@ -102,6 +102,14 @@ time {
   @extend .muted;
 }
 
+.p-author {
+  @extend .muted;
+}
+
+.p-author::after {
+  content: " |";
+}
+
 @mixin heading {
   color: $subject;
   font-size: 1em;
@@ -127,7 +135,7 @@ $anchor: "#";
 @for $j from 1 through 6 {
   main h#{$j} {
     @include heading;
-    a:before {
+    a::before {
       content: $anchor;
     }
   }
