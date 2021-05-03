@@ -91,6 +91,7 @@ a {
 }
 
 footer {
+  @include container;
   @extend .muted;
   p {
     line-height: 1.5em;

@@ -24,6 +24,12 @@ layout: blog
 
 <footer>
   <p>
+    Have a comment?
+    <a href="mailto:~konfou/public-inbox@lists.sr.ht?Subject=Re: {{ page.title }}">Send an email</a>
+    to my <a href="https://lists.sr.ht/~konfou/public-inbox">public inbox</a>.<br>
+    Please follow <a href="https://man.sr.ht/lists.sr.ht/etiquette.md">proper mail etiquette</a>.
+  </p>
+  <p>
     Read more:<br>
     {% for related in site.related_posts limit: 3 %}
     <a href="{{ related.url }}">{{ related.title }}</a><br>
