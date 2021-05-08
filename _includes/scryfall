@@ -1,0 +1,1 @@
+<span style="font-variant: default;">{{ include.search }}</span><sup>[(db)](https://scryfall.com/search?q=!"{{ include.search }}")</sup>

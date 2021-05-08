@@ -28,7 +28,7 @@ monster got  introduced.  Before then  fusion and ritual  monsters where
 the only monsters that could  be special summoned.  For reminder, fusion
 monsters  require specific  monsters, called  _fusion materials_,  and a
 fusion summoning  card such  as, the  known from  the anime,  {% include
-ygocard.html  search='Polymerization' %}.   Ritual monsters  are special
+ygocard  search='Polymerization'   %}.   Ritual  monsters   are  special
 summoned with a  specific ritual summoning card.  In  contrast to fusion
 and all other special summoned monsters, ritual monster cards are placed
 in the main deck.
@@ -36,20 +36,20 @@ in the main deck.
 ## Synchro
 
 An evolution of traditional fusion was, the distinct from fusion summon,
-{% include yugipedia.html  page='Contact Fusion' %}, a  type of built-in
+{%  include  yugipedia page='Contact  Fusion'  %},  a type  of  built-in
 special summon.  Requiring  only the appropriate card in  the extra deck
 and monsters on the field, it  can be considered a precursor to _synchro
 summon_.
 
-A {%  include yugipedia.html  page='Synchro Monster'  %} can  be synchro
-summoned from the extra deck by sending one _Tuner_ monster and a number
-of  other monsters  to the  graveyard if  their sum  (tuner and  others)
-equals the  synchro monster's  level.  Some  synchro monsters  require a
-specific Tuner  monster.  The requirements  for each are written  in the
-card  description text.   Although summoning  is normally  done in  main
-phase, some  cards have effects  that allow  summoning to take  place at
-time other than summoner's main phase when the {% include yugipedia.html
-page='game state' %} is open.
+A {% include yugipedia page='Synchro Monster' %} can be synchro summoned
+from the extra deck by sending one _Tuner_ monster and a number of other
+monsters to  the graveyard if  their sum  (tuner and others)  equals the
+synchro monster's level.  Some synchro monsters require a specific Tuner
+monster.  The requirements for each  are written in the card description
+text.  Although  summoning is  normally done in  main phase,  some cards
+have  effects that  allow summoning  to take  place at  time other  than
+summoner's main phase when the {% include yugipedia page='game state' %}
+is open.
 
 Synchro-centric decks  utilize numerous monsters for  rapid power taking
 advantage of their summoning method.  Though powerful they aren't simple
@@ -65,10 +65,10 @@ and still relevant.
 
 ## Xyz
 
-A  {%  include yugipedia.html  page='Xyz  Monster'  %} can  be  summoned
-whenever monsters of  same level to its _rank_ are  controlled.  Rank is
-the equivalent  to level  for those monsters.   Since they've  no level,
-they aren't affected by level-dependent cards and effects.  The required
+A {%  include yugipedia page='Xyz  Monster' %} can be  summoned whenever
+monsters  of same  level  to its  _rank_ are  controlled.   Rank is  the
+equivalent to  level for those  monsters.  Since they've no  level, they
+aren't  affected by  level-dependent  cards and  effects.  The  required
 monsters for its  summoning, called _materials_, are listed  at its card
 description text. It  is summoned by stacking the  materials and placing
 the Xyz Monster atop of them.
@@ -86,11 +86,11 @@ strategy  was needed  for their  use.  See  <https://redd.it/2gn4vt> and
 
 ## Pendulum
 
-A  monster/spell hybrid.   A  {%  include yugipedia.html  page='Pendulum
- Monster' %} can  be summoned as monsters or activated  like spell cards
- in the _pendulum zone_.  Not all  pendulum monsters have a spell or/and
- monster  effect.  They  have a  _pendulum scale_  that determines  what
- monster levels can be special summoned during a pendulum summon.
+A monster/spell hybrid.  A  {% include yugipedia page='Pendulum Monster'
+ %} can  be summoned as  monsters or activated  like spell cards  in the
+ _pendulum zone_.  Not all pendulum monsters have a spell or/and monster
+ effect.   They have  a _pendulum  scale_ that  determines what  monster
+ levels can be special summoned during a pendulum summon.
 
 During the main  phase a pendulum monster can be  activated (one) in the
 leftmost and (one in the) rightmost  spell & trap zone.  These positions
@@ -120,10 +120,10 @@ the pendulum mechanic for that.
 
 ## Link
 
-A {% include yugipedia.html page='Link  Monster' %} applies effects that
-its lit-up  red _link  arrows_ point  to.  The number  of the  arrows is
-equal to the  number of monsters required to summon  it.  This number is
-called _link rating_.   It is summoned from the extra  deck by using the
+A {% include  yugipedia page='Link Monster' %} applies  effects that its
+lit-up red _link arrows_ point to.  The number of the arrows is equal to
+the number  of monsters required  to summon  it.  This number  is called
+_link  rating_.   It is  summoned  from  the  extra  deck by  using  the
 materials written  at its card description  text.  They do not  have DEF
 rating and can never be in defense position. Taking control of one moves
 it to the  main monster zone and when  it goes back this is  the zone it
