@@ -17,6 +17,11 @@ defaults:
       path: "_posts"
     values:
       layout: "post"
+  -
+    scope:
+      path: "_drafts"
+    values:
+      layout: "post"
 kramdown:
   input: GFM
   auto_ids: true
