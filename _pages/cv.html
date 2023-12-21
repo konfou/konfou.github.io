@@ -42,21 +42,6 @@ layout: cv
   {% endfor %}{% endfor %}
   <hr>
 
-  <h2 class="p-education education">Education</h2>
-  {% for college in site.data.cv.education.colleges %}  <div class="h-event vevent">
-    <h3>
-      <strong class="p-summary summary">{{ college.degree }}</strong>
-    </h3>
-    <h4>
-      <span class="p-org org">{{college.org}}</span>,
-      <span class="p-location location">{{ college.city }}</span>,
-      <abbr class="dt-start dtstart">{{ college.start }}</abbr>&mdash;<abbr class="dt-end dtend">{{college.end }}</abbr>
-    </h4>
-    <p>{{ college.summary }}</p>
-    </div>
-  {% endfor %}
-  <hr>
-
   <h2>Projects and semester papers</h2>
   <p class="bg-info">Contact me if you see something interesting and need a translation.</p>
   {% for project in site.data.cv.projects %}  <div class="h-event vevent">
@@ -85,6 +70,34 @@ layout: cv
       </h5>
       </div>
     {% endfor %}
+  <hr>
+
+  <h2>Certifications</h2>
+  {% for cert in site.data.cv.certs %}  <div class="h-event vevent">
+    <h4>
+      <strong class="p-summary summary">{{ cert.name }}</strong>
+    </h4>
+    <h5>
+      <abbr class="dt-end dtend">{{ cert.date }}</abbr>
+    </h4>
+    <p>{{ cert.summary }}</p>
+    </div>
+  {% endfor %}
+  <hr>
+
+  <h2 class="p-education education">Education</h2>
+  {% for college in site.data.cv.education %}  <div class="h-event vevent">
+    <h3>
+      <strong class="p-summary summary">{{ college.degree }}</strong>
+    </h3>
+    <h4>
+      <span class="p-org org">{{ college.org }}</span>,
+      <span class="p-location location">{{ college.city }}</span>,
+      <abbr class="dt-start dtstart">{{ college.start }}</abbr>&mdash;<abbr class="dt-end dtend">{{ college.end }}</abbr>
+    </h4>
+    <p>{{ college.summary }}</p>
+    </div>
+  {% endfor %}
   <hr>
 
   <h2>Misc</h2>
